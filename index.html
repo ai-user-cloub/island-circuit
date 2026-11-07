@@ -134,7 +134,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
         <aside class="turn-panel" aria-label="Turn controls"><div id="turn-controls"></div><section class="magic-section"><div class="section-heading"><h2>Fruit magic</h2><span id="magic-status" class="muted">One per turn</span></div><div id="magic"></div></section></aside>
       </div>
       <section class="journal-section"><div class="section-heading"><h2>Captain’s log</h2><div class="bot-controls"><label><input type="checkbox" id="auto-bots" checked> Auto AI turns</label><select id="bot-speed" aria-label="AI turn speed"><option value="650">Normal speed</option><option value="160">Fast</option><option value="1300">Slow</option></select><button id="next-bot" class="text-button" disabled>Next AI turn →</button></div></div><div id="journal" class="journal" aria-live="polite" aria-relevant="additions"></div></section>
-      <footer class="table-footer"><span>Island Circuit · 18 turns each · one point per island with your house</span><span>6 warehouse seeds · 2 field seeds · 3 oil at start</span></footer>
+      <footer class="table-footer"><span>Island Circuit · 18 turns each · one point per island with your house</span><span>4 warehouse seeds · 4 oil · empty growth board at start</span></footer>
     </section>
   </main>
   <dialog id="setup-dialog" class="setup-dialog">
@@ -163,7 +163,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
     <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> chooses a build preference with 80% probability on each own turn; <strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Random</strong> samples legal options without strategic scoring.</li></ul><p>The four planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
-    <h3>Provisional setup</h3><p>Each captain starts with 6 warehouse seeds, 2 field seeds, 3 oil, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
+    <h3>Provisional setup</h3><p>Each captain starts with 4 warehouse seeds, 4 oil, no field seeds, sprouts or fruit, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
   </div></dialog>
   <div id="notice" class="notice" role="status" hidden></div>
   <noscript>This game needs JavaScript enabled. Open this HTML file in a current browser to play.</noscript>
@@ -287,7 +287,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     state.players = people.map((person, i) => ({
       id: i, name: String(person.name || ('Player ' + (i + 1))).slice(0, 40), type: person.type, color: COLORS[i],
       position: Math.floor(((i - state.firstPlayer + people.length) % people.length) * state.islands.length / people.length),
-      warehouse: 6, field: 2, sprouts: 0, fruit: 0, oil: 3, score: 0, built: 0, turns: 0,
+      warehouse: 4, field: 0, sprouts: 0, fruit: 0, oil: 4, score: 0, built: 0, turns: 0,
+      initialSeeds: 4, initialOil: 4,
       scoreBeforeBonus: null, endgame: null,
       spells: { dig: true, pause: true, harvest: true, rest: true }, stats: stats()
     }));
@@ -683,9 +684,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       for (const key of ['warehouse', 'field', 'sprouts', 'fruit', 'oil', 'score', 'built', 'turns']) if (!integer(player[key])) fail('Invalid ' + key + ' for player ' + index + '.');
       const placed = state.islands.reduce((sum, island) => sum + island.houses.filter(owner => owner === index).length, 0);
       if (player.built !== placed || placed > 15 || player.turns > 18) fail('Player supply or turn count failed.');
-      if (player.warehouse + player.field + player.sprouts + player.fruit !== 8 + player.stats.seedsGained - player.stats.seedsSpent) fail('Seed conservation failed.');
+      if (player.warehouse + player.field + player.sprouts + player.fruit !== (player.initialSeeds ?? 8) + player.stats.seedsGained - player.stats.seedsSpent) fail('Seed conservation failed.');
       if (!integer(player.stats.conversions)) fail('Invalid conversion count.');
-      if (player.oil !== 3 + player.stats.oilGained - player.stats.oilSpent) fail('Oil conservation failed.');
+      if (player.oil !== (player.initialOil ?? 3) + player.stats.oilGained - player.stats.oilSpent) fail('Oil conservation failed.');
       if (player.score !== player.stats.scoreFromBasic + player.stats.scoreFromCards + player.stats.scoreFromHarvest + player.stats.scoreFromEndgame) fail('Score sources do not reconcile.');
       if (player.stats.waterGained !== player.stats.waterUsed + player.stats.waterWasted) fail('Water totals do not reconcile.');
       if (Object.keys(SPELLS).some(key => typeof player.spells[key] !== 'boolean')) fail('Invalid spell state.');
