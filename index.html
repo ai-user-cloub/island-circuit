@@ -143,7 +143,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       <div class="setup-intro"><span class="small-label">Your next voyage</span><h2>Choose your crew.</h2><p>Each captain can be a human player or an AI.<br>Human players take turns on this device.</p></div>
       <fieldset class="player-count-field"><legend>Total players</legend><div class="segmented" id="player-count"><button type="button" data-count="2" aria-pressed="false">2 players</button><button type="button" data-count="3" aria-pressed="false">3 players</button><button type="button" data-count="4" aria-pressed="true">4 players</button></div></fieldset>
       <p id="setup-map-note" class="setup-map-note">10 islands · every symbol appears 3–4 times · ships start evenly spaced</p>
-      <div class="crew-setup-row human-row"><div class="captain-number">01</div><div><label class="sr-only" for="captain-name">Captain 1 name</label><input id="captain-name" maxlength="24" value="You" aria-label="Captain 1 name"></div><label class="sr-only" for="captain-type">Captain 1 type</label><select id="captain-type" aria-label="Captain 1 type"><option value="human">Human player</option><option value="build80">Build 80%</option><option value="rent80">Rent 80%</option><option value="score80">Score 80%</option><option value="spreadscore">Spread → Score</option><option value="build9rent9">Build 9 → Rent 9</option><option value="rent9build9">Rent 9 → Build 9</option></select></div>
+      <div class="crew-setup-row human-row"><div class="captain-number">01</div><div><label class="sr-only" for="captain-name">Captain 1 name</label><input id="captain-name" maxlength="24" value="You" aria-label="Captain 1 name"></div><label class="sr-only" for="captain-type">Captain 1 type</label><select id="captain-type" aria-label="Captain 1 type"><option value="human">Human player</option><option value="rent80">Rent 80%</option><option value="score80">Score 80%</option><option value="spread7score">Spread 7 → Score</option><option value="spread9score">Spread 9 → Score</option><option value="spreadscore">Spread → Score</option><option value="build9rent9">Build 9 → Rent 9</option><option value="rent9build9">Rent 9 → Build 9</option></select></div>
       <div id="opponent-setup"></div>
       <details class="policy-note"><summary>How the AI captains play</summary><p>Choose an 80% preference, a 9-turn phase plan, or Score 80%. Phase plans switch after their ninth turn. Each AI uses a legal alternative when its preferred action is unavailable.</p></details>
       <label class="seed-label" for="game-seed">Map seed <span class="muted">Optional · reuse to replay the same setup</span></label><input id="game-seed" maxlength="50" placeholder="A new voyage">
@@ -162,7 +162,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>D / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>E / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>B / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>F / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>C / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
     <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
-    <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> chooses a build preference with 80% probability on each own turn; <strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li></ul><p>The six planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
+    <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li><li><strong>Spread 7 → Score</strong> spreads on turns 1–7, then uses Score 80% on turns 8–18.</li><li><strong>Spread 9 → Score</strong> spreads on turns 1–9, then uses Score 80% on turns 10–18. These fixed plans do not switch early on full coverage; they take useful alternatives when no new-island build is available.</li></ul><p>The seven planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
     <h3>Provisional setup</h3><p>Each captain starts with 4 warehouse seeds, 4 oil, no field seeds, sprouts or fruit, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
   </div></dialog>
   <div id="notice" class="notice" role="status" hidden></div>
@@ -176,7 +176,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 12;
+  const SAVE_VERSION = 13;
   const COLORS = ['#276b62', '#c66d3e', '#6474a1', '#a45d7b'];
   // Every symbol occurs exactly once per player in its count's fixed tile set.
   // Only the order of the selected islands is shuffled for each game.
@@ -208,7 +208,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     rest: { name: 'Rest', zh: '休息', cost: 1 }
   };
   const MOVE_COST = { 1: 0, 2: 1, 3: 3 };
-  const TYPES = ['human', 'build80', 'rent80', 'score80', 'spreadscore', 'build9rent9', 'rent9build9'];
+  const TYPES = ['human', 'build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'];
   function fail(message) { throw new Error(message); }
   function compatible(state) { if (!state || state.version !== SAVE_VERSION) fail('This save uses older or unsupported rules. Please start a new game.'); }
   function integer(value) { return Number.isInteger(value) && value >= 0; }
@@ -266,7 +266,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function createGame(config) {
     config = config || {};
-    const people = config.players || [{ name: 'You', type: 'human' }, { name: 'Builder', type: 'build80' }];
+    const people = config.players || [{ name: 'You', type: 'human' }, { name: 'Scorer', type: 'score80' }];
     if (!Array.isArray(people) || people.length < 2 || people.length > 4) fail('Choose 2–4 players.');
     people.forEach(p => { if (!p || !TYPES.includes(p.type)) fail('Unknown player type.'); });
     const seed = String(config.seed === undefined || config.seed === '' ? Date.now() : config.seed);
@@ -568,11 +568,13 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const player = currentPlayer(state);
     const phased = policy === 'build9rent9' || policy === 'rent9build9';
     const ownTurn = player.turns + 1;
-    const spreadPhase = policy === 'spreadscore' && ownTurn <= 9 && state.islands.some(island => !island.houses.includes(player.id));
-    const mode = policy === 'spreadscore' ? (spreadPhase ? 'spread' : random(state) < 0.8 ? 'score' : 'develop') : phased ? ((policy === 'build9rent9') === (ownTurn <= 9) ? 'build' : 'rent') : policy === 'score80' ? (random(state) < 0.8 ? 'score' : 'develop') : random(state) < (policy === 'build80' ? 0.8 : 0.2) ? 'build' : 'rent';
+    const spreadPolicy = ['spreadscore', 'spread7score', 'spread9score'].includes(policy);
+    const spreadLimit = policy === 'spread7score' ? 7 : 9;
+    const spreadPhase = spreadPolicy && ownTurn <= spreadLimit && (policy !== 'spreadscore' || state.islands.some(island => !island.houses.includes(player.id)));
+    const mode = spreadPolicy ? (spreadPhase ? 'spread' : random(state) < 0.8 ? 'score' : 'develop') : phased ? ((policy === 'build9rent9') === (ownTurn <= 9) ? 'build' : 'rent') : policy === 'score80' ? (random(state) < 0.8 ? 'score' : 'develop') : random(state) < (policy === 'build80' ? 0.8 : 0.2) ? 'build' : 'rent';
     state.botIntent = { player: state.current, turn: state.turnNumber, mode, policy };
     if (phased) Object.assign(state.botIntent, { ownTurn, phase: ownTurn <= 9 ? 1 : 2 });
-    if (policy === 'spreadscore') Object.assign(state.botIntent, {ownTurn, phase:spreadPhase?1:2});
+    if (spreadPolicy) Object.assign(state.botIntent, {ownTurn, phase:spreadPhase?1:2});
     if (mode === 'build' || mode === 'spread') player.stats.intentsBuild++;
     else if (mode === 'rent') player.stats.intentsRent++;
     else { player.stats.intentsRandom++; player.stats[mode === 'score' ? 'intentsScore' : 'intentsDevelop'] = (player.stats[mode === 'score' ? 'intentsScore' : 'intentsDevelop'] || 0) + 1; }
@@ -639,7 +641,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (state.done) return state;
     options = options || {};
     const player = currentPlayer(state), policy = options.policy || player.type;
-    if (!['build80', 'rent80', 'score80', 'spreadscore', 'build9rent9', 'rent9build9'].includes(policy)) fail('The current player is human.');
+    if (!['build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'].includes(policy)) fail('The current player is human.');
     const actor = player.id, completed = state.completedTurns;
     const intent = getIntent(state, policy);
     if (state.stage === 'move') {
@@ -710,28 +712,30 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v12';
-  const roles = { human: 'Human captain', build80: 'Build 80%', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
+  const STORAGE = 'island-circuit-match-v13';
+  const roles = { human: 'Human captain', spread7score: 'Spread 7 → Score', spread9score: 'Spread 9 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
   const coords = [[1,1],[1,2],[1,3],[1,4],[2,4],[3,4],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1]];
   const houseSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m2 7 6-5 6 5M4 6v8h8V6M7 14v-4h3v4"/></svg>';
   const shipSvg = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9 1v11H3L1 14l4 4h10l4-6h-8V2Zm-2 3-5 6h5Zm5 0v6h5Z"/></svg>';
   let state, started = false, saved = null, timer = null, noticeTimer = null;
-  let count = 4, captainTypes = ['human', 'build80', 'rent80', 'score80'], captainNames = ['You', '', '', ''], previewIsland = null, inspectedIsland = null, plantAmount = 0;
-  function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Builder', type: 'build80' }, { name: 'Traveller', type: 'rent80' }, { name: 'Scorer', type: 'score80' }] }; }
+  let count = 4, captainTypes = ['human', 'spread7score', 'rent80', 'score80'], captainNames = ['You', '', '', ''], previewIsland = null, inspectedIsland = null, plantAmount = 0;
+  function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Explorer', type: 'spread7score' }, { name: 'Traveller', type: 'rent80' }, { name: 'Scorer', type: 'score80' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 12 && stored.state?.version === 12 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 13 && stored.state?.version === 13 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
   function viewer() { return active(); }
   function humanTurn() { return started && !state.done && active().type === 'human'; }
   function phaseNote(player) {
-    if (!state.done && player.type === 'spreadscore') {
+    if (!state.done && ['spreadscore', 'spread7score', 'spread9score'].includes(player.type)) {
       const covered = state.islands.filter(island => island.houses.includes(player.id)).length;
-      return `${player.turns < 9 && covered < state.islands.length ? 'Spread' : 'Score'} phase · ${covered}/${state.islands.length} islands · own turn ${Math.min(18,player.turns+1)}/18`;
+      const limit = player.type === 'spread7score' ? 7 : 9;
+      const spreading = player.turns < limit && (player.type !== 'spreadscore' || covered < state.islands.length);
+      return `${spreading ? 'Spread' : 'Score'} phase · ${covered}/${state.islands.length} islands · own turn ${Math.min(18,player.turns+1)}/18`;
     }
     if (state.done || !['build9rent9', 'rent9build9'].includes(player.type)) return '';
     if (player.turns >= 18) return '18 turns complete';
@@ -741,7 +745,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 12, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 13, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -869,7 +873,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function renderOpponents() {
     $('#captain-type').value=captainTypes[0];
-    $('#opponent-setup').innerHTML=Array.from({length:count-1},(_,i)=>{const seat=i+1;return `<div class="crew-setup-row"><div class="captain-number">0${seat+1}</div><div><label class="sr-only" for="captain-name-${seat}">Captain ${seat+1} name</label><input id="captain-name-${seat}" data-captain-name="${seat}" maxlength="24" value="${esc(captainNames[seat])}" placeholder="Captain ${seat+1}" aria-label="Captain ${seat+1} name"></div><label class="sr-only" for="opponent-${i}">Captain ${seat+1} type</label><select id="opponent-${i}" data-opponent="${i}" aria-label="Captain ${seat+1} type"><option value="human"${captainTypes[seat]==='human'?' selected':''}>Human player</option><option value="build80"${captainTypes[seat]==='build80'?' selected':''}>Build 80%</option><option value="rent80"${captainTypes[seat]==='rent80'?' selected':''}>Rent 80%</option><option value="score80"${captainTypes[seat]==='score80'?' selected':''}>Score 80%</option><option value="spreadscore"${captainTypes[seat]==='spreadscore'?' selected':''}>Spread → Score</option><option value="build9rent9"${captainTypes[seat]==='build9rent9'?' selected':''}>Build 9 → Rent 9</option><option value="rent9build9"${captainTypes[seat]==='rent9build9'?' selected':''}>Rent 9 → Build 9</option></select></div>`;}).join('');
+    $('#opponent-setup').innerHTML=Array.from({length:count-1},(_,i)=>{const seat=i+1;return `<div class="crew-setup-row"><div class="captain-number">0${seat+1}</div><div><label class="sr-only" for="captain-name-${seat}">Captain ${seat+1} name</label><input id="captain-name-${seat}" data-captain-name="${seat}" maxlength="24" value="${esc(captainNames[seat])}" placeholder="Captain ${seat+1}" aria-label="Captain ${seat+1} name"></div><label class="sr-only" for="opponent-${i}">Captain ${seat+1} type</label><select id="opponent-${i}" data-opponent="${i}" aria-label="Captain ${seat+1} type"><option value="human"${captainTypes[seat]==='human'?' selected':''}>Human player</option><option value="rent80"${captainTypes[seat]==='rent80'?' selected':''}>Rent 80%</option><option value="score80"${captainTypes[seat]==='score80'?' selected':''}>Score 80%</option><option value="spread7score"${captainTypes[seat]==='spread7score'?' selected':''}>Spread 7 → Score</option><option value="spread9score"${captainTypes[seat]==='spread9score'?' selected':''}>Spread 9 → Score</option><option value="spreadscore"${captainTypes[seat]==='spreadscore'?' selected':''}>Spread → Score</option><option value="build9rent9"${captainTypes[seat]==='build9rent9'?' selected':''}>Build 9 → Rent 9</option><option value="rent9build9"${captainTypes[seat]==='rent9build9'?' selected':''}>Rent 9 → Build 9</option></select></div>`;}).join('');
     $('#player-count').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.count)===count)));
     $('#setup-map-note').textContent=`${G.MAP_SETS[count].length} islands · each symbol appears ${count===2?'twice':count===3?'2–3 times':'3–4 times'} · ships start evenly spaced`;
   }
@@ -955,7 +959,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   $('#export-game').addEventListener('click',()=>{
-    if(!started)return;const output={format:'island-circuit-match-v12',version:12,exportedAt:new Date().toISOString(),state};
+    if(!started)return;const output={format:'island-circuit-match-v13',version:13,exportedAt:new Date().toISOString(),state};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
