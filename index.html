@@ -106,6 +106,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 @media(max-width:480px){.setup-map-note{margin:0 20px 10px}.player-bonus{font-size:11px}.travel-extra{font-size:11px}}
 .sidebar-bottom>p{color:#172d34}
 
+/* Keep growth counts visible for every captain at every screen size. */
+.player-card .growth-summary,.player-card.active .growth-summary,.player-card:not(.active) .growth-summary{display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:flex-start;line-height:1.5}.growth-summary span{white-space:nowrap}
+
+
 </style>
 </head>
 <body>
