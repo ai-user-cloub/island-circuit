@@ -154,12 +154,12 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-header"><h2>How to play</h2><button id="rules-close" class="icon-button" aria-label="Close rules">×</button></div><div class="rules-content">
     <p>After 18 rounds, add one final point for every distinct island with at least one house of your colour. You do not need to control those islands. More own houses on the same island do not add further final points. No houses means zero bonus. Highest total wins; ties share the victory. Each player has 15 building pieces.</p>
     <h3>Maps for 2–4 players</h3><p>Two players use 6 islands (I04, I05, I06, I08, I10, I14), three use those six plus I03 and I11, and four add I02 and I09. Every symbol appears twice with two players, 2–3 times with three, or 3–4 times with four. Shuffle the chosen islands into a clockwise circuit. Ships start as evenly spaced as possible: positions 1 / 4, 1 / 3 / 6, or 1 / 3 / 6 / 8.</p>
-    <h3>Your turn</h3><ol><li>A card enters the public market. Above three cards, the oldest is discarded.</li><li>Move clockwise: 1 step is free, 2 steps cost 1 oil, 3 steps cost 3 oil.</li><li>Land on an opponent’s island: its controller receives 2 warehouse seeds from the supply. Land on your own: receive X water.</li><li>Choose one main action: build, rent using a basic effect or one market card, or convert 4 warehouse seeds into 1 fruit. You may also pass.</li><li>Optionally plant more seeds, then end your turn.</li></ol><p>X equals all houses on this island plus one for each other player's ship currently there. Your own ship does not count. Count ships when each effect resolves; an empty island with another ship has X = 1. Other ships do not change building cost, fixed basic effects, or final island coverage points. Conversion uses four seeds already in your warehouse: move one to your fruit space and return the other three to the supply. It uses your whole main action, so it cannot be combined with building or renting that turn. Planting is a free action between complete effects during your own turn, including before sailing or after landing. You may plant several times. Seeds cannot return to the warehouse. Resolve every point of a single water reward before planting again.</p>
+    <p>A: +1 point · B: +2 warehouse seeds · C: +2 water. D: T1/T6 · E: T2/T3 · F: T4/T5. Use a matching public card free, or pay 2 oil for a nonmatching card.</p><h3>Your turn</h3><ol><li>A card enters the public market. Above three cards, the oldest is discarded.</li><li>Move clockwise: 1 step is free, 2 steps cost 1 oil, 3 steps cost 3 oil.</li><li>Land on an opponent’s island: its controller receives 2 warehouse seeds from the supply. Land on your own: receive X water.</li><li>Choose one main action: build, rent using a basic effect or one market card, or convert 4 warehouse seeds into 1 fruit. You may also pass.</li><li>Optionally plant more seeds, then end your turn.</li></ol><p>X equals all houses on this island plus one for each other player's ship currently there. Your own ship does not count. Count ships when each effect resolves; an empty island with another ship has X = 1. Other ships do not change building cost, fixed basic effects, or final island coverage points. Conversion uses four seeds already in your warehouse: move one to your fruit space and return the other three to the supply. It uses your whole main action, so it cannot be combined with building or renting that turn. Planting is a free action between complete effects during your own turn, including before sailing or after landing. You may plant several times. Seeds cannot return to the warehouse. Resolve every point of a single water reward before planting again.</p>
     <h3>Build with a card</h3><p>After paying the full 2, 4 or 6 warehouse seeds, place your house and fully resolve its water. You may then discard one public T card for its build bonus: T1 +2 oil; T2 +1 warehouse seed; T3 +1 point; T4 +1 warehouse seed; T5 or T6 +2 water. Any card works on any island. The selected card's travel effect does not apply. A seed gained from the card cannot pay for this same build.</p>
     <h3>Building and control</h3><p>Before building, compare your house count on this island with all other players' houses there combined. If yours is greater, pay 2 warehouse seeds; if equal, pay 4; if theirs is greater, pay 6. An empty island costs 4. Ships do not affect the price. The last builder controls the island. Old houses remain. Immediately after building, receive X water, using the new total number of houses plus other ships currently there.</p>
     <h3>Water and fruit</h3><p>One water advances one lowest-level seed: field → sprout → fruit. Every field seed must sprout before any sprout ripens. Water cannot be stored, and excess water is lost. Warehouse seeds cannot absorb water.</p>
     <h3>Travel cards</h3><p>Use one card from the market, free on its printed symbol or pay 2 oil. Everyone receives X regardless of control: count all houses plus other ships currently on this island. T1 oil, T2 warehouse seeds, and T5/T6 water add X. T3 scores X and grants a fixed 2 warehouse seeds; its seed reward does not increase with X or control. T4 scores 1 + X. You may then use Harvest if ready, affordable, and you have not used a spell this turn. Used cards are discarded without an immediate replacement. All player counts use the same 120-card deck: 20 of each type.</p>
-    <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>B / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>C / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>D / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>E / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>F / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
+    <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>D / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>E / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>B / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>F / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>C / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
     <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
     <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> chooses a build preference with 80% probability on each own turn; <strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Random</strong> samples legal options without strategic scoring.</li></ul><p>The four planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
@@ -176,7 +176,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 9;
+  const SAVE_VERSION = 10;
   const COLORS = ['#276b62', '#c66d3e', '#6474a1', '#a45d7b'];
   // Every symbol occurs exactly once per player in its count's fixed tile set.
   // Only the order of the selected islands is shuffled for each game.
@@ -187,19 +187,19 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   };
   const SYMBOLS = {
     A: { icon: '🪪', name: 'Score', zh: '得分', basic: 'score', amount: 1 },
-    B: { icon: '🎟️', name: 'Amber ticket', zh: '金票', basic: null },
-    C: { icon: '🎫', name: 'Blue ticket', zh: '藍票', basic: null },
-    D: { icon: '🫑', name: 'Seeds', zh: '種子', basic: 'warehouse', amount: 2 },
-    E: { icon: '🇪🇺', name: 'Travel pass', zh: '旅遊證', basic: null },
-    F: { icon: '📼', name: 'Water', zh: '水', basic: 'water', amount: 2 }
+    B: { icon: '🫑', name: 'Seeds', zh: '種子', basic: 'warehouse', amount: 2 },
+    C: { icon: '📼', name: 'Water', zh: '水', basic: 'water', amount: 2 },
+    D: { icon: '🎟️', name: 'Amber ticket', zh: '金票', basic: null },
+    E: { icon: '🎫', name: 'Blue ticket', zh: '藍票', basic: null },
+    F: { icon: '🇪🇺', name: 'Travel pass', zh: '旅遊證', basic: null }
   };
   const CARDS = {
-    1: { id: 1, name: 'Oil supply', zh: '補油 3', symbol: 'B', resource: 'oil', base: 3 },
-    2: { id: 2, name: 'Seed stop', zh: '補種子 2', symbol: 'C', resource: 'warehouse', base: 2 },
-    3: { id: 3, name: 'Island excursion', zh: '得分 X＋補種子 2', symbol: 'C', resource: 'score', base: 0, seeds: 2 },
-    4: { id: 4, name: 'Coastal visit', zh: '得分 1＋X', symbol: 'E', resource: 'score', base: 1 },
-    5: { id: 5, name: 'Rain harvest', zh: '補水 4', symbol: 'E', resource: 'water', base: 4 },
-    6: { id: 6, name: 'Freshwater stop', zh: '補水 3', symbol: 'B', resource: 'water', base: 3 }
+    1: { id: 1, name: 'Oil supply', zh: '補油 3', symbol: 'D', resource: 'oil', base: 3 },
+    2: { id: 2, name: 'Seed stop', zh: '補種子 2', symbol: 'E', resource: 'warehouse', base: 2 },
+    3: { id: 3, name: 'Island excursion', zh: '得分 X＋補種子 2', symbol: 'E', resource: 'score', base: 0, seeds: 2 },
+    4: { id: 4, name: 'Coastal visit', zh: '得分 1＋X', symbol: 'F', resource: 'score', base: 1 },
+    5: { id: 5, name: 'Rain harvest', zh: '補水 4', symbol: 'F', resource: 'water', base: 4 },
+    6: { id: 6, name: 'Freshwater stop', zh: '補水 3', symbol: 'D', resource: 'water', base: 3 }
   };
   const SPELLS = {
     dig: { name: 'Resupply', zh: '補給', cost: 3 },
@@ -272,7 +272,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const seed = String(config.seed === undefined || config.seed === '' ? Date.now() : config.seed);
     const state = { version: SAVE_VERSION, rules: { endgameBonus: config.endgameBonus !== false, bonusAware: config.bonusAware !== false }, seed, rng: hash(seed), round: 1, totalRounds: 18, current: 0, firstPlayer: 0, stage: 'move', completedTurns: 0, turnNumber: 1, magicUsed: false, botIntent: null, done: false, endgameApplied: false, finalBonuses: [], winners: [], log: [], islands: [], removedIslands: [], deck: [], market: [], discard: [], players: [] };
     const islands = [];
-    const symbols = Object.keys(SYMBOLS);
+    const symbols = ['A', 'D', 'E', 'B', 'F', 'C']; // Preserve printed island IDs while relabelling actions.
     let serial = 1;
     for (let i = 0; i < symbols.length; i++) for (let j = i + 1; j < symbols.length; j++) {
       islands.push({ id: 'I' + String(serial++).padStart(2, '0'), symbols: [symbols[i], symbols[j]], houses: [], controller: -1 });
@@ -713,7 +713,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v9';
+  const STORAGE = 'island-circuit-match-v10';
   const roles = { human: 'Human captain', build80: 'Build 80%', rent80: 'Rent 80%', random: 'Random', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
@@ -725,7 +725,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Builder', type: 'build80' }, { name: 'Traveller', type: 'rent80' }, { name: 'Drifter', type: 'random' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 9 && stored.state?.version === 9 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 10 && stored.state?.version === 10 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
@@ -740,7 +740,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 9, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 10, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -831,7 +831,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     } else if(state.stage==='action') {
       const actions=G.legalActions(state), build=actions.find(a=>a.type==='build'&&a.index===undefined), cost=G.buildCost(island,p.id), newIsland=!island.houses.includes(p.id);
       const buildCards=state.market.map((card,index)=>{const bonus=G.buildCardReward(card.type), unit={oil:'oil',warehouse:'warehouse seed',score:'point',water:'water'}[bonus.resource];return `<button class="text-button build-card-option" data-build-card="${index}" ${build?'':'disabled'}>Build with ${esc(G.CARDS[card.type].name)} · +${bonus.amount} ${unit}${bonus.amount===1?'':'s'}</button>`;}).join('');
-      body=`<h2>Choose your main action.</h2><p class="turn-description">Island ${p.position+1} · X ${X} (${island.houses.length} houses + ${visitors} other ships). Each other ship adds 1 to house-based rewards.</p><button class="primary build-button" data-build ${build?'':'disabled'}><strong>Build house ${island.houses.length+1} · ${cost} seeds</strong><small>Take control and receive ${X+1} water<br>${newIsland?'First own house here: +1 final point':'Island already counts: no extra final point'}</small></button>${buildCards?`<p class="turn-description">Or discard one market card for a build bonus, after paying and building:</p><div class="build-card-options">${buildCards}</div>`:''}<p class="turn-description">Or choose a travel card in the market.</p>${island.symbols.some(s=>G.SYMBOLS[s].basic)?`<div class="basic-row">${island.symbols.filter(s=>G.SYMBOLS[s].basic).map(s=>`<button class="basic-button" data-basic="${s}">+${G.SYMBOLS[s].amount} ${s==='A'?'point':s==='D'?'warehouse seeds':'water'}</button>`).join('')}</div>`:'<p class="muted">This island has no basic resource effect.</p>'}<button class="text-button conversion-button" data-convert ${p.warehouse>=4?'':'disabled'}>Convert 4 warehouse seeds → 1 fruit · main action</button><button class="text-button pass-button" data-pass>Pass main action →</button>`;
+      body=`<h2>Choose your main action.</h2><p class="turn-description">Island ${p.position+1} · X ${X} (${island.houses.length} houses + ${visitors} other ships). Each other ship adds 1 to house-based rewards.</p><button class="primary build-button" data-build ${build?'':'disabled'}><strong>Build house ${island.houses.length+1} · ${cost} seeds</strong><small>Take control and receive ${X+1} water<br>${newIsland?'First own house here: +1 final point':'Island already counts: no extra final point'}</small></button>${buildCards?`<p class="turn-description">Or discard one market card for a build bonus, after paying and building:</p><div class="build-card-options">${buildCards}</div>`:''}<p class="turn-description">Or choose a travel card in the market.</p>${island.symbols.some(s=>G.SYMBOLS[s].basic)?`<div class="basic-row">${island.symbols.filter(s=>G.SYMBOLS[s].basic).map(s=>`<button class="basic-button" data-basic="${s}">+${G.SYMBOLS[s].amount} ${s==='A'?'point':s==='B'?'warehouse seeds':'water'}</button>`).join('')}</div>`:'<p class="muted">This island has no basic resource effect.</p>'}<button class="text-button conversion-button" data-convert ${p.warehouse>=4?'':'disabled'}>Convert 4 warehouse seeds → 1 fruit · main action</button><button class="text-button pass-button" data-pass>Pass main action →</button>`;
     } else {
       plantAmount=Math.min(Math.max(0,plantAmount),p.warehouse);
       body=`<h2>Prepare your next harvest.</h2><p class="turn-description">Planting commits warehouse seeds to the field. Keep some back if you want to build.</p><label class="plant-label" for="plant-number">Seeds to plant<input id="plant-number" class="plant-number" type="number" min="0" max="${p.warehouse}" value="${plantAmount}"></label><input id="plant-range" class="plant-range" type="range" min="0" max="${p.warehouse}" value="${plantAmount}" aria-label="Seeds to plant"><div class="plant-shortcuts"><button class="text-button" data-plant-preset="0">Keep all</button><button class="text-button" data-plant-preset="${p.warehouse}">Plant all ${p.warehouse}</button></div><div id="plant-preview" class="plant-preview"></div><button class="primary end-turn" data-end-turn>Plant & end turn →</button>`;
@@ -954,7 +954,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   $('#export-game').addEventListener('click',()=>{
-    if(!started)return;const output={format:'island-circuit-match-v9',version:9,exportedAt:new Date().toISOString(),state};
+    if(!started)return;const output={format:'island-circuit-match-v10',version:10,exportedAt:new Date().toISOString(),state};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
