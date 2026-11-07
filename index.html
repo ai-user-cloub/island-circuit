@@ -156,7 +156,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     <h3>Water and fruit</h3><p>One water advances one lowest-level seed: field → sprout → fruit. Every field seed must sprout before any sprout ripens. Water cannot be stored, and excess water is lost. Warehouse seeds cannot absorb water.</p>
     <h3>Travel cards</h3><p>Use one card from the market, free on its printed symbol or pay 2 oil. Everyone receives X regardless of control: count all houses plus other ships currently on this island. T1 oil, T2 warehouse seeds, and T5/T6 water add X. T3 scores X and grants a fixed 2 warehouse seeds; its seed reward does not increase with X or control. T4 scores 1 + X. You may then use Harvest if ready, affordable, and you have not used a spell this turn. Used cards are discarded without an immediate replacement. All player counts use the same 120-card deck: 20 of each type.</p>
     <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>B / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>C / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>D / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>E / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>F / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
-    <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Dig · 1 fruit:</strong> refill oil to 6; oil above 6 is retained.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 3 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 4 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
+    <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
     <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> chooses a build preference with 80% probability on each own turn; <strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Random</strong> samples legal options without strategic scoring.</li></ul><p>The four planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
     <h3>Provisional setup</h3><p>Each captain starts with 6 warehouse seeds, 2 field seeds, 3 oil, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
@@ -172,7 +172,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 8;
+  const SAVE_VERSION = 9;
   const COLORS = ['#276b62', '#c66d3e', '#6474a1', '#a45d7b'];
   // Every symbol occurs exactly once per player in its count's fixed tile set.
   // Only the order of the selected islands is shuffled for each game.
@@ -198,10 +198,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     6: { id: 6, name: 'Freshwater stop', zh: '補水 3', symbol: 'B', resource: 'water', base: 3 }
   };
   const SPELLS = {
-    dig: { name: 'Excavate', zh: '掘挖', cost: 1 },
+    dig: { name: 'Resupply', zh: '補給', cost: 3 },
     pause: { name: 'Stay', zh: '暫停', cost: 2 },
-    harvest: { name: 'Harvest festival', zh: '收成祭', cost: 3 },
-    rest: { name: 'Rest', zh: '休息', cost: 4 }
+    harvest: { name: 'Harvest festival', zh: '收成祭', cost: 4 },
+    rest: { name: 'Rest', zh: '休息', cost: 1 }
   };
   const MOVE_COST = { 1: 0, 2: 1, 3: 3 };
   const TYPES = ['human', 'build80', 'rent80', 'random', 'build9rent9', 'rent9build9'];
@@ -456,7 +456,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       player.fruit -= cost; player.warehouse += cost; player.spells[spell] = false;
       state.magicUsed = true; player.stats.spells++;
       record(state, 'spell', player.name + ' casts ' + SPELLS[spell].name + ' for ' + cost + ' fruit; the seeds return to their warehouse.', { spell, cost });
-      if (spell === 'dig') addOil(player, Math.max(0, 6 - player.oil));
+      if (spell === 'dig') { addOil(player, Math.max(0, 4 - player.oil)); addSeeds(player, Math.max(0, 4 - player.warehouse)); }
       else if (spell === 'pause') { state.stage = 'action'; record(state, 'pause', player.name + ' stays on island ' + (player.position + 1) + ' and skips all landing rewards.', { island: player.position }); }
       else if (spell === 'harvest') { player.score += 3; player.stats.scoreFromHarvest += 3; }
       else if (spell === 'rest') Object.keys(player.spells).forEach(key => { player.spells[key] = true; });
@@ -586,10 +586,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function smartPreMoveSpell(state, intent) {
     const player = currentPlayer(state);
-    if (availableSpell(state, 'rest') && ((!player.spells.harvest && player.fruit >= 6 && state.round < 18) || (intent === 'build' && player.warehouse < 4))) {
+    if (availableSpell(state, 'rest') && !player.spells.harvest && state.round < 18 && player.fruit >= 5) {
       applyAction(state, { type: 'spell', spell: 'rest' }); return;
     }
-    if (availableSpell(state, 'dig') && player.oil <= 1) {
+    if (availableSpell(state, 'dig') && player.oil <= 1 && player.warehouse <= 3) {
       applyAction(state, { type: 'spell', spell: 'dig' }); return;
     }
     if (availableSpell(state, 'pause')) {
@@ -606,8 +606,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const player = currentPlayer(state), island = islandOf(state);
     const target = intent === 'build' && player.built < 15 ? buildCost(island, player.id) : 2;
     if (player.warehouse >= target) return;
-    if (availableSpell(state, 'dig') && player.warehouse + 1 >= target) applyAction(state, { type: 'spell', spell: 'dig' });
-    else if (availableSpell(state, 'rest') && player.warehouse + 4 >= target) applyAction(state, { type: 'spell', spell: 'rest' });
+    if (availableSpell(state, 'dig') && Math.max(4, player.warehouse + SPELLS.dig.cost) >= target) applyAction(state, { type: 'spell', spell: 'dig' });
+    else if (availableSpell(state, 'rest') && !player.spells.dig && player.fruit >= 4 && state.round < 18) applyAction(state, { type: 'spell', spell: 'rest' });
   }
   function smartPlantAmount(state) {
     const player = currentPlayer(state);
@@ -709,10 +709,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v8';
+  const STORAGE = 'island-circuit-match-v9';
   const roles = { human: 'Human captain', build80: 'Build 80%', rent80: 'Rent 80%', random: 'Random', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
-  const spellDetails = { dig: 'Refill oil to 6', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
+  const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
   const coords = [[1,1],[1,2],[1,3],[1,4],[2,4],[3,4],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1]];
   const houseSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m2 7 6-5 6 5M4 6v8h8V6M7 14v-4h3v4"/></svg>';
   const shipSvg = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M9 1v11H3L1 14l4 4h10l4-6h-8V2Zm-2 3-5 6h5Zm5 0v6h5Z"/></svg>';
@@ -721,7 +721,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Builder', type: 'build80' }, { name: 'Traveller', type: 'rent80' }, { name: 'Drifter', type: 'random' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 8 && stored.state?.version === 8 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 9 && stored.state?.version === 9 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
@@ -736,7 +736,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 8, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 9, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -950,7 +950,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   $('#export-game').addEventListener('click',()=>{
-    if(!started)return;const output={format:'island-circuit-match-v8',version:8,exportedAt:new Date().toISOString(),state};
+    if(!started)return;const output={format:'island-circuit-match-v9',version:9,exportedAt:new Date().toISOString(),state};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
