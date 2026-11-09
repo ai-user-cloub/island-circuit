@@ -163,7 +163,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     <h3>Water and fruit</h3><p>One water advances one lowest-level seed: field → sprout → fruit. Every field seed must sprout before any sprout ripens. Water cannot be stored, and excess water is lost. Warehouse seeds cannot absorb water.</p>
     <h3>Travel cards</h3><p>Use one card from the market, free on its printed symbol or pay 2 oil. Everyone receives X regardless of control: count all houses plus other ships currently on this island. T1 oil, T2 warehouse seeds, and T5/T6 water add X. T3 scores X and grants a fixed 2 warehouse seeds; its seed reward does not increase with X or control. T4 scores 1 + X. You may then use Harvest if ready, affordable, and you have not used a spell this turn. Used cards are discarded without an immediate replacement. All player counts use the same 120-card deck: 20 of each type.</p>
     <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>D / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>E / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>B / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>F / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>C / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
-    <h3>Achievement races</h3><p>Shuffle the five achievements and reveal player count + 1: three for 2 players, four for 3, all five for 4. Goals: 3 own houses on one island; 6 own houses total; hold 15 oil; hold 12 warehouse seeds; hold 6 fruit. First claimant scores 8, second scores 4, then the goal closes. Claim at most one per own turn, between complete effects, without using your main action or spell. You must meet the condition now; each player can claim each goal once. Resources are not spent and points remain after you spend them. Unclaimed goals give no final points. No water-waste or island-control goals.</p><h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
+    <h3>Achievement races</h3><p>Shuffle all eleven achievements and reveal player count + 1: three for 2 players, four for 3, five for 4. Goals: 3 own houses on one island; 6 own houses total; hold 15 oil; hold 12 warehouse seeds; hold 6 fruit; The Complete Gardener (2+ each in warehouse, field, sprouts and fruit); The Waterfront (own houses on 3 consecutive islands, including around the circuit end); Balanced Portfolio (6+ oil, 6+ warehouse seeds, 3+ fruit); Travel Light (after a build, rent or conversion, have 0 oil, 0 warehouse seeds and 4+ fruit; passing does not count); The Alchemist (cast all four different spells over the game); Perfect Timing (a paid move leaves 0 oil, then T1 refills from 0 to 6+ in that same turn). First claimant scores 8, second scores 4, then the goal closes. Claim at most one per own turn, between complete effects, without using your main action or spell. You must meet the condition now; each player can claim each goal once. Resources are not spent and points remain after you spend them. Unclaimed goals give no final points. No water-waste or island-control goals.</p><h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
     <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Rent 80%</strong> chooses a rent preference with 80% probability.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li><li><strong>Spread 7 → Score</strong> spreads on turns 1–7, then uses Score 80% on turns 8–18.</li><li><strong>Spread 9 → Score</strong> spreads on turns 1–9, then uses Score 80% on turns 10–18. These fixed plans do not switch early on full coverage; they take useful alternatives when no new-island build is available.</li></ul><p>The seven planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
     <h3>Provisional setup</h3><p>Each captain starts with 4 warehouse seeds, 4 oil, no field seeds, sprouts or fruit, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
@@ -179,15 +179,27 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 14;
+  const SAVE_VERSION = 15;
   const ACHIEVEMENTS = {
     island3: { name: 'Island settlement', description: '3 own houses on one island' },
     houses6: { name: 'Master builder', description: '6 own houses in total' },
     oil15: { name: 'Oil reserve', description: 'Hold 15 oil' },
     seeds12: { name: 'Seed reserve', description: 'Hold 12 warehouse seeds' },
-    fruit6: { name: 'Orchard', description: 'Hold 6 fruit' }
+    fruit6: { name: 'Orchard', description: 'Hold 6 fruit' },
+    gardener: { name: 'The Complete Gardener', description: 'Hold 2+ warehouse seeds, 2+ field seeds, 2+ sprouts and 2+ fruit together' },
+    waterfront: { name: 'The Waterfront', description: 'Own houses on 3 consecutive islands; control not required' },
+    portfolio: { name: 'Balanced Portfolio', description: 'Hold 6+ oil, 6+ warehouse seeds and 3+ fruit together' },
+    light: { name: 'Travel Light', description: 'After your main action: 0 oil, 0 warehouse seeds and 4+ fruit' },
+    alchemist: { name: 'The Alchemist', description: 'Cast each of the 4 different spells at least once this game' },
+    timing: { name: 'Perfect Timing', description: 'Spend your last oil moving, then use T1 from 0 oil to reach 6+ oil that turn' }
   };
   function achievementSatisfied(state, id, player) {
+    if(id==='gardener')return player.warehouse>=2&&player.field>=2&&player.sprouts>=2&&player.fruit>=2;
+    if(id==='waterfront')return state.islands.some((_,i)=>[0,1,2].every(offset=>state.islands[(i+offset)%state.islands.length].houses.includes(player.id)));
+    if(id==='portfolio')return player.oil>=6&&player.warehouse>=6&&player.fruit>=3;
+    if(id==='light')return state.stage==='plant'&&['build','card','basic','convert'].includes(state.mainActionType)&&player.oil===0&&player.warehouse===0&&player.fruit>=4;
+    if(id==='alchemist')return Object.keys(SPELLS).every(key=>player.spellsCast[key]);
+    if(id==='timing')return state.perfectTiming&&state.current===player.id&&player.oil>=6;
     return id === 'island3' ? state.islands.some(i => i.houses.filter(owner => owner === player.id).length >= 3) : id === 'houses6' ? player.built >= 6 : id === 'oil15' ? player.oil >= 15 : id === 'seeds12' ? player.warehouse >= 12 : id === 'fruit6' ? player.fruit >= 6 : false;
   }
   function legalClaims(state) {
@@ -278,6 +290,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     state.stage = 'move';
     state.magicUsed = false;
     state.achievementClaimed = false;
+    state.lastOilMove = false;
+    state.perfectTiming = false;
+    state.mainActionType = null;
     state.botIntent = null;
     state.turnNumber = state.completedTurns + 1;
     record(state, 'turn', currentPlayer(state).name + ' begins turn ' + (currentPlayer(state).turns + 1) + '.');
@@ -313,6 +328,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     }));
     state.achievements = shuffle(state,Object.keys(ACHIEVEMENTS)).slice(0,people.length+1).map(id=>({id,claims:[]}));
     state.players.forEach(p=>{p.stats.scoreFromAchievements=0;});
+    state.players.forEach(p=>{p.spellsCast={dig:false,pause:false,harvest:false,rest:false};});
     for (let i = 0; i < 3; i++) state.market.push(state.deck.pop());
     record(state, 'start', 'Game started. Eighteen rounds; ' + people.length + ' players. Seed: ' + seed, {}, -1);
     beginTurn(state);
@@ -489,6 +505,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const spell = action.spell, cost = SPELLS[spell].cost;
       player.fruit -= cost; player.warehouse += cost; player.spells[spell] = false;
       state.magicUsed = true; player.stats.spells++;
+      player.spellsCast[spell]=true;
       record(state, 'spell', player.name + ' casts ' + SPELLS[spell].name + ' for ' + cost + ' fruit; the seeds return to their warehouse.', { spell, cost });
       if (spell === 'dig') { addOil(player, Math.max(0, 4 - player.oil)); addSeeds(player, Math.max(0, 4 - player.warehouse)); }
       else if (spell === 'pause') { state.stage = 'action'; record(state, 'pause', player.name + ' stays on island ' + (player.position + 1) + ' and skips all landing rewards.', { island: player.position }); }
@@ -500,6 +517,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const chosen = legalMoves(state).find(move => move.steps === action.steps);
       if (!chosen) fail('That move is not available.');
       player.oil -= chosen.cost; player.stats.oilSpent += chosen.cost; player.position = chosen.position;
+      state.lastOilMove=chosen.cost>0&&player.oil===0;
       record(state, 'move', player.name + ' moves ' + chosen.steps + ' step' + (chosen.steps === 1 ? '' : 's') + ' to island ' + (chosen.position + 1) + ', spending ' + chosen.cost + ' oil.', { steps: chosen.steps, cost: chosen.cost, island: chosen.position });
       landing(state); state.stage = 'action'; return state;
     }
@@ -536,6 +554,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       record(state, 'basic', player.name + ' uses the island basic effect: +' + amount + ' ' + (resource === 'warehouse' ? 'warehouse seeds' : resource) + '.', { symbol: action.symbol, resource, amount });
     } else if (action.type === 'card') {
       const card = state.market[action.index], reward = legal.reward;
+      const oilBeforeCard=player.oil;
       player.oil -= legal.cost; player.stats.oilSpent += legal.cost; state.market.splice(action.index, 1); state.discard.push(card);
       player.stats.rents++; player.stats.cards++;
       record(state, 'card', player.name + ' uses ' + CARDS[card.type].name + ': +' + reward.amount + ' ' + reward.resource + (reward.water ? ' and +' + reward.water + ' water' : '') + (reward.seeds ? ' and +' + reward.seeds + ' warehouse seeds' : '') + (legal.cost ? ' (2 oil).' : ' (free).'), { cardType: card.type, cardId: card.id, cost: legal.cost, resource: reward.resource, amount: reward.amount, water: reward.water || 0, seeds: reward.seeds || 0, houses: island.houses.length, otherShips: otherShips(state, player.position, player.id) });
@@ -545,9 +564,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       else { player.score += reward.amount; player.stats.scoreFromCards += reward.amount; }
       if (reward.water) giveWater(state, player.id, reward.water, 'card');
       if (reward.seeds) addSeeds(player, reward.seeds);
+      if(card.type===1&&state.lastOilMove&&oilBeforeCard===0&&player.oil>=6)state.perfectTiming=true;
     } else {
       player.stats.passes++; record(state, 'pass', player.name + ' skips the main action.');
     }
+    state.mainActionType=action.type;
     state.stage = 'plant';
     return state;
   }
@@ -593,7 +614,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
         // Convert has already added its fruit above.
         if(reward.seeds)p.warehouse+=reward.seeds;
       }
-      const projected=Object.assign({},state,{islands:state.islands.map(i=>i===island?tile:i)});
+      const projected=Object.assign({},state,{stage:'plant',mainActionType:action.type,islands:state.islands.map(i=>i===island?tile:i)});
+      if(action.type==='card'&&action.cardType===1&&state.lastOilMove&&player.oil===0&&p.oil>=6)projected.perfectTiming=true;
       return Math.max(0,...state.achievements.filter(a=>a.claims.length<2&&!a.claims.includes(p.id)&&achievementSatisfied(projected,a.id,p)).map(a=>a.claims.length?4:8));
     };
     const points = action => (action.reward?.resource === 'score' ? action.reward.amount : 0) + (action.buildBonus?.resource === 'score' ? action.buildBonus.amount : 0) + achievementBonus(action);
@@ -633,7 +655,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const destinations = legalMoves(state);
     const moves = destinations.map(action => {
       const preview = previewMove(state, action.steps);
-      const best = bestAction(state, preview.player, state.islands[preview.position], preview.actions, intent);
+      const planState=Object.assign({},state,{lastOilMove:action.cost>0&&preview.player.oil===0});
+      const best = bestAction(planState, preview.player, state.islands[preview.position], preview.actions, intent);
       const arrivalValue = preview.landing.kind === 'water' ? rewardValue(player, { resource: 'water', amount: preview.landing.amount }, state.round) : preview.landing.kind === 'visitor' ? -0.6 : 0;
       return { action, value: best.value + (best.preferred ? 100 : 0) + arrivalValue - action.cost * 0.3 };
     });
@@ -730,6 +753,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const allCards = state.deck.concat(state.market, state.discard);
     if (allCards.length !== 120 || new Set(allCards.map(c => c.id)).size !== 120) fail('Travel card conservation failed.');
     if (state.market.length > 3) fail('Too many market cards.');
+    if(typeof state.lastOilMove!=='boolean'||typeof state.perfectTiming!=='boolean')fail('Invalid turn achievement tracking.');
     if (!Array.isArray(state.achievements) || state.achievements.length!==state.players.length+1 || new Set(state.achievements.map(a=>a.id)).size!==state.achievements.length || typeof state.achievementClaimed!=='boolean') fail('Invalid achievements.');
     for(const a of state.achievements) if(!ACHIEVEMENTS[a.id] || !Array.isArray(a.claims) || a.claims.length>2 || new Set(a.claims).size!==a.claims.length || a.claims.some(id=>!integer(id)||id>=state.players.length)) fail('Invalid achievement claims.');
     state.players.forEach((player, index) => {
@@ -744,6 +768,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       if (player.score !== player.stats.scoreFromBasic + player.stats.scoreFromCards + player.stats.scoreFromHarvest + player.stats.scoreFromEndgame + achievementPoints) fail('Score sources do not reconcile.');
       if (player.stats.waterGained !== player.stats.waterUsed + player.stats.waterWasted) fail('Water totals do not reconcile.');
       if (Object.keys(SPELLS).some(key => typeof player.spells[key] !== 'boolean')) fail('Invalid spell state.');
+      if(!player.spellsCast||Object.keys(SPELLS).some(key=>typeof player.spellsCast[key]!=='boolean'))fail('Invalid spell history.');
       if (!integer(player.position) || player.position >= state.islands.length) fail('Invalid ship position.');
       if (state.done) {
         const expected = finalBonus(state, index);
@@ -768,7 +793,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v14';
+  const STORAGE = 'island-circuit-match-v15';
   const roles = { human: 'Human captain', spread7score: 'Spread 7 → Score', spread9score: 'Spread 9 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
@@ -780,7 +805,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Explorer', type: 'spread7score' }, { name: 'Traveller', type: 'rent80' }, { name: 'Scorer', type: 'score80' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 14 && stored.state?.version === 14 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 15 && stored.state?.version === 15 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
@@ -801,7 +826,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 14, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 15, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -838,7 +863,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const def=G.ACHIEVEMENTS[a.id],claim=legal.find(c=>c.achievement===a.id);
       const slots=[0,1].map(i=>`${i===0?8:4} pts: ${a.claims[i]===undefined?'Open':esc(state.players[a.claims[i]].name)}`).join(' · ');
       const status=a.claims.includes(active().id)?'Already claimed':a.claims.length===2?'Closed':state.achievementClaimed?'Claim used this turn':'Condition not met';
-      return `<article class="achievement-card"><strong>${esc(def.name)}</strong><p>${esc(def.description)}</p><small>${slots}</small><button class="quiet" data-claim="${a.id}" ${claim?'':'disabled'}>${claim?'Claim +'+claim.points+' points':status}</button></article>`;
+      const progress=a.id==='alchemist'?`<small>${esc(active().name)}: ${Object.keys(G.SPELLS).map(key=>`${spellNames[key]} ${active().spellsCast[key]?'✓':'—'}`).join(' · ')}</small>`:a.id==='timing'?`<small>${state.perfectTiming?'Sequence complete':state.lastOilMove?'Last oil spent moving · use free T1 from 0 oil to reach 6+':'Spend the last oil on a paid move first'}</small>`:'';
+      return `<article class="achievement-card"><strong>${esc(def.name)}</strong><p>${esc(def.description)}</p><small>${slots}</small>${progress}<button class="quiet" data-claim="${a.id}" ${claim?'':'disabled'}>${claim?'Claim +'+claim.points+' points':status}</button></article>`;
     }).join('');
   }
   function renderPlayers() {
@@ -1025,7 +1051,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   $('#export-game').addEventListener('click',()=>{
-    if(!started)return;const output={format:'island-circuit-match-v14',version:14,exportedAt:new Date().toISOString(),state};
+    if(!started)return;const output={format:'island-circuit-match-v15',version:15,exportedAt:new Date().toISOString(),state};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
