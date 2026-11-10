@@ -146,7 +146,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       <div class="setup-intro"><span class="small-label">Your next voyage</span><h2>Choose your crew.</h2><p>Each captain can be a human player or an AI.<br>Human players take turns on this device.</p></div>
       <fieldset class="player-count-field"><legend>Total players</legend><div class="segmented" id="player-count"><button type="button" data-count="2" aria-pressed="false">2 players</button><button type="button" data-count="3" aria-pressed="false">3 players</button><button type="button" data-count="4" aria-pressed="true">4 players</button></div></fieldset>
       <p id="setup-map-note" class="setup-map-note">10 islands · every symbol appears 3–4 times · ships start evenly spaced</p>
-      <div class="crew-setup-row human-row"><div class="captain-number">01</div><div><label class="sr-only" for="captain-name">Captain 1 name</label><input id="captain-name" maxlength="24" value="You" aria-label="Captain 1 name"></div><label class="sr-only" for="captain-type">Captain 1 type</label><select id="captain-type" aria-label="Captain 1 type"><option value="human">Human player</option><option value="build80">Build 80%</option><option value="rent80">Rent 80%</option><option value="score80">Score 80%</option><option value="spread7score">Spread 7 → Score</option><option value="spread9score">Spread 9 → Score</option><option value="spreadscore">Spread → Score</option><option value="build9rent9">Build 9 → Rent 9</option><option value="rent9build9">Rent 9 → Build 9</option></select></div>
+      <div class="crew-setup-row human-row"><div class="captain-number">01</div><div><label class="sr-only" for="captain-name">Captain 1 name</label><input id="captain-name" maxlength="24" value="You" aria-label="Captain 1 name"></div><label class="sr-only" for="captain-type">Captain 1 type</label><select id="captain-type" aria-label="Captain 1 type"><option value="human">Human player</option><option value="achiever">Achiever</option><option value="build80">Build 80%</option><option value="rent80">Rent 80%</option><option value="score80">Score 80%</option><option value="spread7score">Spread 7 → Score</option><option value="spread9score">Spread 9 → Score</option><option value="spreadscore">Spread → Score</option><option value="build9rent9">Build 9 → Rent 9</option><option value="rent9build9">Rent 9 → Build 9</option></select></div>
       <div id="opponent-setup"></div>
       <details class="policy-note"><summary>How the AI captains play</summary><p>Choose an 80% preference, a 9-turn phase plan, or Score 80%. Phase plans switch after their ninth turn. Each AI uses a legal alternative when its preferred action is unavailable.</p></details>
       <label class="seed-label" for="game-seed">Map seed <span class="muted">Optional · reuse to replay the same setup</span></label><input id="game-seed" maxlength="50" placeholder="A new voyage">
@@ -165,7 +165,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     <table><thead><tr><th>Symbol</th><th>Basic effect or free cards</th></tr></thead><tbody><tr><td>A / 🪪</td><td>Basic: +1 score</td></tr><tr><td>D / 🎟️</td><td>Free: oil 3 + X, water 3 + X</td></tr><tr><td>E / 🎫</td><td>Free: seeds 2 + X, score X + fixed 2 seeds</td></tr><tr><td>B / 🫑</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>F / 🇪🇺</td><td>Free: score 1 + X, or water 4 + X</td></tr><tr><td>C / 📼</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
     <h3>Achievement races</h3><p>Shuffle all eleven achievements and reveal player count + 1: three for 2 players, four for 3, five for 4. Goals: 3 own houses on one island; 6 own houses total; hold 8 oil; hold 12 warehouse seeds; hold 6 fruit; The Complete Gardener (2+ each in warehouse, field, sprouts and fruit); The Waterfront (own houses on 3 consecutive islands, including around the circuit end); Balanced Portfolio (6+ oil, 6+ warehouse seeds, 3+ fruit); Travel Light (after a build, rent or conversion, have 0 oil, 0 warehouse seeds and 4+ fruit; passing does not count); The Alchemist (cast all four different spells over the game); Perfect Timing (a paid move leaves 0 oil, then T1 refills from 0 to 6+ in that same turn). First claimant scores 8, second scores 4, then the goal closes. Claim at most one per own turn, between complete effects, without using your main action or spell. You must meet the condition now; each player can claim each goal once. Resources are not spent and points remain after you spend them. Unclaimed goals give no final points. No water-waste or island-control goals.</p><h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
     <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
-    <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> prefers building on 80% of own turns 1–15; <strong>Rent 80%</strong> prefers renting on 80% of own turns 1–15. Both use Score 80% on own turns 16–18: 80% immediate scoring, 20% development.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li><li><strong>Spread 7 → Score</strong> spreads on turns 1–7, then uses Score 80% on turns 8–18.</li><li><strong>Spread 9 → Score</strong> spreads on turns 1–9, then uses Score 80% on turns 10–18. These fixed plans do not switch early on full coverage; they take useful alternatives when no new-island build is available.</li></ul><p>The eight planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
+    <h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> prefers building on 80% of own turns 1–15; <strong>Rent 80%</strong> prefers renting on 80% of own turns 1–15. Both use Score 80% on own turns 16–18: 80% immediate scoring, 20% development.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10–18.</li><li><strong>Rent 9 → Build 9</strong> always prefers renting on own turns 1–9, then building on own turns 10–18.</li><li><strong>Achiever</strong> pursues the available achievement prizes, saving resources and choosing planting/spells toward a target. It switches to Score 80% when it has no claimable prize slots left: its own completed goals and goals closed by others are excluded. A second-place prize still counts as available.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li><li><strong>Spread 7 → Score</strong> spreads on turns 1–7, then uses Score 80% on turns 8–18.</li><li><strong>Spread 9 → Score</strong> spreads on turns 1–9, then uses Score 80% on turns 10–18. These fixed plans do not switch early on full coverage; they take useful alternatives when no new-island build is available.</li></ul><p>The nine planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
     <h3>Provisional setup</h3><p>Each captain starts with 4 warehouse seeds, 4 oil, no field seeds, sprouts or fruit, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Three cards start in the market. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
   </div></dialog>
   <div id="notice" class="notice" role="status" hidden></div>
@@ -179,7 +179,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 17;
+  const SAVE_VERSION = 18;
   const ACHIEVEMENTS = {
     island3: { name: 'Island settlement', description: '3 own houses on one island' },
     houses6: { name: 'Master builder', description: '6 own houses in total' },
@@ -238,7 +238,37 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     rest: { name: 'Rest', zh: '休息', cost: 1 }
   };
   const MOVE_COST = { 1: 0, 2: 1, 3: 3 };
-  const TYPES = ['human', 'build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'];
+  const TYPES = ['human', 'achiever', 'build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'];
+  function remainingAchievements(state, player) {
+    return state.achievements.filter(a=>a.claims.length<2&&!a.claims.includes(player.id));
+  }
+  function achievementDistance(state,id,p) {
+    if(achievementSatisfied(state,id,p))return 0;
+    const gap=(target,current)=>Math.max(0,target-current);
+    const own=state.islands.map(i=>i.houses.filter(owner=>owner===p.id).length);
+    const seedSupport=gap(4,p.warehouse)/3;
+    const fruitCost=target=>gap(target,p.fruit)*2-Math.min(p.sprouts,gap(target,p.fruit))*.5-Math.min(p.field,gap(target,p.fruit))*.25;
+    if(id==='island3')return gap(3,Math.max(...own))*2+seedSupport;
+    if(id==='houses6')return gap(6,p.built)*2+seedSupport;
+    if(id==='waterfront')return Math.min(...own.map((_,i)=>[0,1,2].filter(k=>!own[(i+k)%own.length]).length))*2+seedSupport;
+    if(id==='oil8')return gap(8,p.oil)/3;
+    if(id==='seeds12')return gap(12,p.warehouse)/3;
+    if(id==='fruit6')return fruitCost(6)+gap(6,p.fruit+p.sprouts+p.field)/3;
+    if(id==='portfolio')return gap(6,p.oil)/3+gap(6,p.warehouse)/3+fruitCost(3);
+    if(id==='gardener')return gap(2,p.warehouse)/3+gap(2,p.field)*.6+gap(2,p.sprouts)+gap(2,p.fruit)*2;
+    if(id==='light')return fruitCost(4)+p.oil/3+p.warehouse*.15+(state.stage==='plant'?.1:.5);
+    if(id==='alchemist') {
+      const missing=Object.keys(SPELLS).filter(key=>!p.spellsCast[key]);
+      return missing.length+gap(missing.reduce((n,key)=>n+SPELLS[key].cost,0),p.fruit)*.5;
+    }
+    if(id==='timing')return (state.lastOilMove?0:1+Math.min(Math.abs(p.oil-1),Math.abs(p.oil-3))*.25)+(state.market.some(c=>c.type===1)?0:2)+1;
+    return 100;
+  }
+  function achieverTarget(state,p) {
+    const choices=remainingAchievements(state,p).map(a=>({id:a.id,priority:achievementDistance(state,a.id,p)/(a.claims.length?4:8)}));
+    choices.sort((a,b)=>a.priority-b.priority);
+    return choices[0]?.id || null;
+  }
   function fail(message) { throw new Error(message); }
   function compatible(state) { if (!state || state.version !== SAVE_VERSION) fail('This save uses older or unsupported rules. Please start a new game.'); }
   function integer(value) { return Number.isInteger(value) && value >= 0; }
@@ -600,9 +630,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     }
     return rewardValue(player, action.reward, state.round) - action.cost * (player.oil <= 3 ? 1.4 : 0.7);
   }
-  function bestAction(state, player, island, actions, intent) {
-    const achievementBonus = action => {
-      if(state.achievementClaimed)return 0;
+  function projectMainAction(state, player, island, action) {
       const p=Object.assign({},player),tile=Object.assign({},island,{houses:island.houses.slice()});
       if(action.type==='build'){p.warehouse-=action.cost;p.built++;tile.houses.push(p.id);}
       else if(action.type==='card')p.oil-=action.cost;
@@ -616,39 +644,58 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       }
       const projected=Object.assign({},state,{stage:'plant',mainActionType:action.type,islands:state.islands.map(i=>i===island?tile:i)});
       if(action.type==='card'&&action.cardType===1&&state.lastOilMove&&player.oil===0&&p.oil>=6)projected.perfectTiming=true;
+      return {state:projected,player:p};
+  }
+  function bestAction(state, player, island, actions, intent) {
+    const projections=new Map();
+    const project=action=>{if(!projections.has(action))projections.set(action,projectMainAction(state,player,island,action));return projections.get(action);};
+    const achievementBonus = action => {
+      if(state.achievementClaimed)return 0;
+      const {state:projected,player:p}=project(action);
       return Math.max(0,...state.achievements.filter(a=>a.claims.length<2&&!a.claims.includes(p.id)&&achievementSatisfied(projected,a.id,p)).map(a=>a.claims.length?4:8));
     };
     const points = action => (action.reward?.resource === 'score' ? action.reward.amount : 0) + (action.buildBonus?.resource === 'score' ? action.buildBonus.amount : 0) + achievementBonus(action);
     const eligible = intent === 'spread' ? actions.filter(action => action.type !== 'build' || !island.houses.includes(player.id)) : actions;
-    const preferred = eligible.filter(action => intent === 'score' ? points(action) > 0 : intent === 'develop' ? action.type !== 'pass' : ['build', 'spread'].includes(intent) ? action.type === 'build' : action.type === 'basic' || action.type === 'card');
+    const preferred = eligible.filter(action => intent === 'achieve' ? true : intent === 'score' ? points(action) > 0 : intent === 'develop' ? action.type !== 'pass' : ['build', 'spread'].includes(intent) ? action.type === 'build' : action.type === 'basic' || action.type === 'card');
     const choices = preferred.length ? preferred : eligible.filter(action => action.type !== 'pass');
     if (!choices.length) return { action: actions.find(a => a.type === 'pass'), value: -10, preferred: false };
     let best = choices[0], value = -Infinity;
+    const target=intent==='achieve'?(state.botIntent?.target||achieverTarget(state,player)):null;
     for (const action of choices) {
-      const score = actionValue(state, player, island, action) + achievementBonus(action)*2 + (intent === 'score' ? points(action) * 1000 : 0);
+      const future=target?project(action):null;
+      const score = target ? achievementBonus(action)*1000-achievementDistance(future.state,target,future.player)*30+actionValue(state,player,island,action)*.2 : actionValue(state, player, island, action) + achievementBonus(action)*2 + (intent === 'score' ? points(action) * 1000 : 0);
       if (score > value) { value = score; best = action; }
     }
     return { action: best, value, preferred: preferred.length > 0 };
   }
   function getIntent(state, policy) {
-    if (state.botIntent && state.botIntent.player === state.current && state.botIntent.turn === state.turnNumber && state.botIntent.policy === policy) return state.botIntent.mode;
+    if (state.botIntent && state.botIntent.player === state.current && state.botIntent.turn === state.turnNumber && state.botIntent.policy === policy) {
+      if(policy==='achiever'&&state.botIntent.mode==='achieve') {
+        const pending=remainingAchievements(state,currentPlayer(state));
+        if(!pending.length){state.botIntent.mode=random(state)<.8?'score':'develop';delete state.botIntent.target;}
+        else if(!pending.some(a=>a.id===state.botIntent.target))state.botIntent.target=achieverTarget(state,currentPlayer(state));
+      }
+      return state.botIntent.mode;
+    }
     const player = currentPlayer(state);
     const phased = policy === 'build9rent9' || policy === 'rent9build9';
     const ownTurn = player.turns + 1;
     const lateScorer = ['build80','rent80'].includes(policy) && ownTurn >= 16;
+    const achieving=policy==='achiever'&&remainingAchievements(state,player).length>0;
     const spreadPolicy = ['spreadscore', 'spread7score', 'spread9score'].includes(policy);
     const spreadLimit = policy === 'spread7score' ? 7 : 9;
     const spreadPhase = spreadPolicy && ownTurn <= spreadLimit && (policy !== 'spreadscore' || state.islands.some(island => !island.houses.includes(player.id)));
-    const mode = lateScorer ? (random(state) < 0.8 ? 'score' : 'develop') : spreadPolicy ? (spreadPhase ? 'spread' : random(state) < 0.8 ? 'score' : 'develop') : phased ? ((policy === 'build9rent9') === (ownTurn <= 9) ? 'build' : 'rent') : policy === 'score80' ? (random(state) < 0.8 ? 'score' : 'develop') : random(state) < (policy === 'build80' ? 0.8 : 0.2) ? 'build' : 'rent';
+    const mode = achieving ? 'achieve' : policy==='achiever'||lateScorer ? (random(state) < 0.8 ? 'score' : 'develop') : spreadPolicy ? (spreadPhase ? 'spread' : random(state) < 0.8 ? 'score' : 'develop') : phased ? ((policy === 'build9rent9') === (ownTurn <= 9) ? 'build' : 'rent') : policy === 'score80' ? (random(state) < 0.8 ? 'score' : 'develop') : random(state) < (policy === 'build80' ? 0.8 : 0.2) ? 'build' : 'rent';
     state.botIntent = { player: state.current, turn: state.turnNumber, mode, policy };
+    if(achieving)state.botIntent.target=achieverTarget(state,player);
     if (phased) Object.assign(state.botIntent, { ownTurn, phase: ownTurn <= 9 ? 1 : 2 });
     if (spreadPolicy) Object.assign(state.botIntent, {ownTurn, phase:spreadPhase?1:2});
     if (['build80','rent80'].includes(policy)) Object.assign(state.botIntent,{ownTurn,phase:lateScorer?2:1});
     if (mode === 'build' || mode === 'spread') player.stats.intentsBuild++;
     else if (mode === 'rent') player.stats.intentsRent++;
-    else { player.stats.intentsRandom++; player.stats[mode === 'score' ? 'intentsScore' : 'intentsDevelop'] = (player.stats[mode === 'score' ? 'intentsScore' : 'intentsDevelop'] || 0) + 1; }
+    else { player.stats.intentsRandom++; const key=mode==='score'?'intentsScore':mode==='achieve'?'intentsAchieve':'intentsDevelop';player.stats[key]=(player.stats[key]||0)+1; }
     if (phased) record(state, 'intent', player.name + ' intends to ' + mode + ' (own turn ' + ownTurn + ' of 18; phase ' + (ownTurn <= 9 ? 1 : 2) + ').', { mode, policy, ownTurn, phase: ownTurn <= 9 ? 1 : 2 });
-    else record(state, 'intent', player.name + ' intends to ' + (mode === 'random' ? 'choose randomly' : mode) + '.', { mode, policy });
+    else record(state, 'intent', player.name + ' intends to ' + (mode==='achieve'?'pursue '+ACHIEVEMENTS[state.botIntent.target].name:mode) + '.', Object.assign({ mode, policy },achieving?{target:state.botIntent.target}:{}));
     return mode;
   }
   function availableSpell(state, spell) { return legalSpells(state).some(action => action.spell === spell); }
@@ -706,24 +753,65 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const reserve = state.round <= 13 ? 4 : 2;
     return Math.min(Math.max(0, player.warehouse - reserve), Math.max(0, target - player.field - player.sprouts));
   }
+  function achieverSpell(state) {
+    if(state.magicUsed)return;
+    const p=currentPlayer(state),target=state.botIntent?.target||achieverTarget(state,p);
+    if(!target)return;
+    const before=achievementDistance(state,target,p);
+    let chosen=null,value=.05;
+    for(const action of legalSpells(state)) {
+      const preview=clone(state);applyAction(preview,action);
+      const q=currentPlayer(preview);
+      const gain=before-achievementDistance(preview,target,q)+(legalClaims(preview).length?20:0);
+      if(gain>value){value=gain;chosen=action;}
+    }
+    if(chosen)applyAction(state,chosen);
+  }
+  function achieverPlantAmount(state) {
+    const p=currentPlayer(state),target=state.botIntent?.target||achieverTarget(state,p);
+    if(!target)return smartPlantAmount(state);
+    if(target==='seeds12')return Math.max(0,p.warehouse-12);
+    if(target==='light'&&p.fruit>=4)return p.warehouse;
+    let reserve=4,stock=4;
+    if(target==='fruit6'){reserve=0;stock=Math.max(0,6-p.fruit);}
+    else if(target==='portfolio'){reserve=6;stock=Math.max(0,3-p.fruit);}
+    else if(target==='light'){reserve=0;stock=Math.max(0,4-p.fruit);}
+    else if(target==='alchemist'){reserve=0;stock=Math.min(6,Math.max(0,Object.keys(SPELLS).filter(k=>!p.spellsCast[k]).reduce((n,k)=>n+SPELLS[k].cost,0)-p.fruit));}
+    else if(target==='gardener') {
+      reserve=2;
+      if(p.fruit>=2&&p.sprouts>=2)return Math.min(Math.max(0,p.warehouse-reserve),Math.max(0,2-p.field));
+      stock=p.fruit>=2?2:4-p.fruit;
+    }
+    return Math.min(Math.max(0,p.warehouse-reserve),Math.max(0,stock-p.field-p.sprouts));
+  }
   function runBotTurn(state, options) {
     compatible(state);
     if (state.done) return state;
     options = options || {};
     const player = currentPlayer(state), policy = options.policy || player.type;
-    if (!['build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'].includes(policy)) fail('The current player is human.');
+    if (!['achiever', 'build80', 'rent80', 'score80', 'spreadscore', 'spread7score', 'spread9score', 'build9rent9', 'rent9build9'].includes(policy)) fail('The current player is human.');
     const actor = player.id, completed = state.completedTurns;
-    const intent = getIntent(state, policy);
-    const claim = () => { const choices=legalClaims(state).sort((a,b)=>b.points-a.points);if(choices.length)applyAction(state,choices[0]); };
+    let intent=null;
+    const claim = () => {
+      const choices=legalClaims(state).sort((a,b)=>b.points-a.points);
+      if(choices.length){applyAction(state,choices[0]);
+        if(policy==='achiever'&&intent==='achieve'){
+          const target=achieverTarget(state,player);
+          if(target)state.botIntent.target=target;
+          else{intent='score';state.botIntent.mode='score';delete state.botIntent.target;}
+        }
+      }
+    };
     claim();
+    intent=getIntent(state,policy);
     if (state.stage === 'move') {
-      smartPreMoveSpell(state, intent);
+      if(intent==='achieve')achieverSpell(state);else smartPreMoveSpell(state, intent);
       claim();
       if (state.stage === 'move') applyAction(state, smartMove(state, intent).action);
       claim();
     }
     if (state.stage === 'action') {
-      smartFundingSpell(state, intent);
+      if(intent==='achieve')achieverSpell(state);else smartFundingSpell(state, intent);
       claim();
       const actions = legalActions(state);
       {
@@ -738,10 +826,12 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       }
     }
     if (state.stage === 'plant') {
-      if (availableSpell(state, 'harvest')) applyAction(state, { type: 'spell', spell: 'harvest' });
+      if(intent==='achieve')achieverSpell(state);
+      else if (availableSpell(state, 'harvest')) applyAction(state, { type: 'spell', spell: 'harvest' });
       else if (availableSpell(state, 'rest') && !player.spells.harvest && state.round < 18) applyAction(state, { type: 'spell', spell: 'rest' });
       claim();
-      const amount = smartPlantAmount(state);
+      let amount = intent==='achieve'?achieverPlantAmount(state):smartPlantAmount(state);
+      if(policy==='achiever'&&amount>0){applyAction(state,{type:'sow',amount});amount=0;claim();}
       applyAction(state, { type: 'plant', amount });
     }
     if (state.completedTurns !== completed + 1 || state.players[actor].turns < 1) fail('Bot failed to finish exactly one turn.');
@@ -785,7 +875,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (state.done && (!state.players.every(p => p.turns === 18) || state.stage !== 'done')) fail('Game ended before equal turns.');
     return true;
   }
-  return { createGame, newGame: createGame, currentPlayer, applyAction, legalMoves, legalActions, legalSpells, legalClaims, achievementSatisfied, previewMove, cardReward, cardCost, buildCost, otherShips, effectiveX, buildCardReward, waterResult, giveWater, finalBonus, buildBonusMarginal, runBotTurn, validateState, clone, SYMBOLS, CARDS, SPELLS, ACHIEVEMENTS, COLORS, MAP_SETS, SAVE_VERSION, MOVE_COST };
+  return { createGame, newGame: createGame, currentPlayer, applyAction, legalMoves, legalActions, legalSpells, legalClaims, achievementSatisfied, remainingAchievements, previewMove, cardReward, cardCost, buildCost, otherShips, effectiveX, buildCardReward, waterResult, giveWater, finalBonus, buildBonusMarginal, runBotTurn, validateState, clone, SYMBOLS, CARDS, SPELLS, ACHIEVEMENTS, COLORS, MAP_SETS, SAVE_VERSION, MOVE_COST };
 });
 
 </script>
@@ -795,8 +885,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v17';
-  const roles = { human: 'Human captain', build80: 'Build 80%', spread7score: 'Spread 7 → Score', spread9score: 'Spread 9 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
+  const STORAGE = 'island-circuit-match-v18';
+  const roles = { human: 'Human captain', achiever: 'Achiever', build80: 'Build 80%', spread7score: 'Spread 7 → Score', spread9score: 'Spread 9 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9', rent9build9: 'Rent 9 → Build 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
   const coords = [[1,1],[1,2],[1,3],[1,4],[2,4],[3,4],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1]];
@@ -807,13 +897,17 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Explorer', type: 'spread7score' }, { name: 'Traveller', type: 'rent80' }, { name: 'Scorer', type: 'score80' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 17 && stored.state?.version === 17 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 18 && stored.state?.version === 18 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
   function viewer() { return active(); }
   function humanTurn() { return started && !state.done && active().type === 'human'; }
   function phaseNote(player) {
+    if(!state.done&&player.type==='achiever'){
+      const remaining=G.remainingAchievements(state,player);
+      return `${remaining.length?'Achievement':'Score'} phase · ${remaining.length} ${remaining.length===1?'race':'races'} left`;
+    }
     if(!state.done && ['build80','rent80'].includes(player.type))return `${player.turns>=15?'Score':player.type==='build80'?'Build 80%':'Rent 80%'} phase · own turn ${Math.min(18,player.turns+1)}/18`;
     if (!state.done && ['spreadscore', 'spread7score', 'spread9score'].includes(player.type)) {
       const covered = state.islands.filter(island => island.houses.includes(player.id)).length;
@@ -829,7 +923,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 17, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 18, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -967,7 +1061,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function renderOpponents() {
     $('#captain-type').value=captainTypes[0];
-    $('#opponent-setup').innerHTML=Array.from({length:count-1},(_,i)=>{const seat=i+1;return `<div class="crew-setup-row"><div class="captain-number">0${seat+1}</div><div><label class="sr-only" for="captain-name-${seat}">Captain ${seat+1} name</label><input id="captain-name-${seat}" data-captain-name="${seat}" maxlength="24" value="${esc(captainNames[seat])}" placeholder="Captain ${seat+1}" aria-label="Captain ${seat+1} name"></div><label class="sr-only" for="opponent-${i}">Captain ${seat+1} type</label><select id="opponent-${i}" data-opponent="${i}" aria-label="Captain ${seat+1} type"><option value="human"${captainTypes[seat]==='human'?' selected':''}>Human player</option><option value="build80"${captainTypes[seat]==='build80'?' selected':''}>Build 80%</option><option value="rent80"${captainTypes[seat]==='rent80'?' selected':''}>Rent 80%</option><option value="score80"${captainTypes[seat]==='score80'?' selected':''}>Score 80%</option><option value="spread7score"${captainTypes[seat]==='spread7score'?' selected':''}>Spread 7 → Score</option><option value="spread9score"${captainTypes[seat]==='spread9score'?' selected':''}>Spread 9 → Score</option><option value="spreadscore"${captainTypes[seat]==='spreadscore'?' selected':''}>Spread → Score</option><option value="build9rent9"${captainTypes[seat]==='build9rent9'?' selected':''}>Build 9 → Rent 9</option><option value="rent9build9"${captainTypes[seat]==='rent9build9'?' selected':''}>Rent 9 → Build 9</option></select></div>`;}).join('');
+    $('#opponent-setup').innerHTML=Array.from({length:count-1},(_,i)=>{const seat=i+1;return `<div class="crew-setup-row"><div class="captain-number">0${seat+1}</div><div><label class="sr-only" for="captain-name-${seat}">Captain ${seat+1} name</label><input id="captain-name-${seat}" data-captain-name="${seat}" maxlength="24" value="${esc(captainNames[seat])}" placeholder="Captain ${seat+1}" aria-label="Captain ${seat+1} name"></div><label class="sr-only" for="opponent-${i}">Captain ${seat+1} type</label><select id="opponent-${i}" data-opponent="${i}" aria-label="Captain ${seat+1} type"><option value="human"${captainTypes[seat]==='human'?' selected':''}>Human player</option><option value="achiever"${captainTypes[seat]==='achiever'?' selected':''}>Achiever</option><option value="build80"${captainTypes[seat]==='build80'?' selected':''}>Build 80%</option><option value="rent80"${captainTypes[seat]==='rent80'?' selected':''}>Rent 80%</option><option value="score80"${captainTypes[seat]==='score80'?' selected':''}>Score 80%</option><option value="spread7score"${captainTypes[seat]==='spread7score'?' selected':''}>Spread 7 → Score</option><option value="spread9score"${captainTypes[seat]==='spread9score'?' selected':''}>Spread 9 → Score</option><option value="spreadscore"${captainTypes[seat]==='spreadscore'?' selected':''}>Spread → Score</option><option value="build9rent9"${captainTypes[seat]==='build9rent9'?' selected':''}>Build 9 → Rent 9</option><option value="rent9build9"${captainTypes[seat]==='rent9build9'?' selected':''}>Rent 9 → Build 9</option></select></div>`;}).join('');
     $('#player-count').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.count)===count)));
     $('#setup-map-note').textContent=`${G.MAP_SETS[count].length} islands · each symbol appears ${count===2?'twice':count===3?'2–3 times':'3–4 times'} · ships start evenly spaced`;
   }
@@ -1054,7 +1148,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   $('#export-game').addEventListener('click',()=>{
-    if(!started)return;const output={format:'island-circuit-match-v17',version:17,exportedAt:new Date().toISOString(),state};
+    if(!started)return;const output={format:'island-circuit-match-v18',version:18,exportedAt:new Date().toISOString(),state};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
