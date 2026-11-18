@@ -167,7 +167,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       <p class="setup-footnote">16 ordinary points + final round · 6 / 8 / 10-island maps · provisional starting setup</p>
     </form>
   </dialog>
-  <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-header"><h2>How to play</h2><button id="rules-close" class="icon-button" aria-label="Close rules">×</button></div><div class="rules-content"><h3>Version 37 — starting islands and seed income</h3><p>Every island has three free T faces and no basic actions. Other normal travel pays 2 oil access, plus the face’s trade cost. T1: 3+3X oil. T2: 2+2X warehouse seeds. T3: pay X warehouse seeds for X souvenirs. T4: 1+X oil AND 1+X warehouse seeds. T5: 1+X new sprouts from supply. T6: pay X oil for X souvenirs. X counts all houses and other ships, not your own ship.</p><h3>All water sources</h3><ul><li>Own-controlled landing: you gain X water.</li><li>Other players on the landing island each receive 2 water per own house AND own ship there, regardless of control. A ship alone earns 2 water. The moving player receives no dividend from their own pieces. This replaces the old controller seed income.</li><li>Die use 2 or 3: previous user receives 2 water, unless the same player repeats.</li><li>Deep Well power: once between your turn starts, a batch of 2+ water gains 1 extra water.</li></ul><p>Water is immediately resolved on the lowest seed stage, one seed per water; excess is lost. No normal travel die or building reward gives water.</p><h3>Building and souvenirs</h3><p>Direct builds cost 2/4/6 warehouse seeds comparing own houses to all others combined, and require a die. T1 bonus 2 oil; T2 bonus 1 seed; T3 bonus 1 ordinary point; T4 bonus 1 seed; T5 bonus 1 sprout; T6 bonus 1 oil. No construction water. After normal travel or a main-action exploration-tile activation, optionally build once more at normal seed cost, without a die or reward.</p><p>Crossing over opponent ships strictly between departure and destination earns 1 souvenir each; starting and ending co-location do not. Each unspent souvenir scores 1 at the end or may replace 1 fruit cost; each spent souvenir becomes 1 warehouse seed. The payment input selects how many to substitute; otherwise fruit is spent first.</p><h3>Starting islands</h3><p>Your initial ship position is your permanent starting island. Passing or landing on it during movement gives 1 warehouse seed per house you have built anywhere, counted before your main action. Starting setup, leaving home and Pause do not trigger this income. Normal landing rewards still apply.</p><h3>Supply ports</h3><p>At 2/3/4 players, 2/2/3 islands are supply ports, evenly placed around the route. On a port, spend your main action to gain 2 oil without a die or payment. No X bonus, no die-track advancement and no follow-up build. Ports are public and independent of control.</p><h3>Die tracks</h3><p>Three dice stay public. First use gives the user 2 warehouse seeds after costs and rewards. Second and third uses give the actual previous user of that die 2 water; self-repeat awards none. On third use reroll only that die and clear its last user. Build, normal travel and exploration activation each advance one die. No turn-start rolls, no extra turns. Full costs must be available before first-use seeds.</p><h3>Exploration powers</h3><p>Reveal: main action, 2 oil, 2 ordinary points. Optionally claim the revealed power immediately: either listed face is free, or pay 2 oil to use any other public die. Later claiming is a main action. No base activation resource cost; using an unlisted face costs 2 oil. This does not change its face or reset its track. Fuel Exchange discounts normal travel access only. All twelve powers are once per player, permanent and never globally closed. Claiming advances one die track and replaces its normal travel reward; it gives no instant resource or score reward of its own. Effects are printed on each island and owned powers appear on each player.</p><p>These are base values, modified by owned powers below. One spell per own turn: Resupply costs 3 fruit, refills oil and warehouse separately to 4, then returns all 3 payment tokens as warehouse seeds (including souvenirs); warehouse ends at max(4, starting warehouse) + 3; Pause costs 2 before movement, skips movement and all landing rewards; Harvest costs 4 after the main action, scores 3 ordinary points; Rest costs 1, resets all spells without restoring this turn’s spell allowance. Souvenirs can substitute. Four warehouse seeds can convert to one fruit as the main action, returning three to supply.</p><h3>All twelve powers</h3><table><thead><tr><th>Power</th><th>Either die</th><th>Permanent effect · once per player</th></tr></thead><tbody><tr><td>Deep Well</td><td>T5 / T6</td><td>Once between your turn starts, a water batch of 2+ gains 1 extra water.</td></tr><tr><td>Rain Terrace</td><td>T2 / T5</td><td>The first seed you plant each own turn enters sprouts instead of field.</td></tr><tr><td>Fuel Exchange</td><td>T1 / T4</td><td>Off-symbol normal travel access costs 1 oil instead of 2.</td></tr><tr><td>Nursery</td><td>T2 / T3</td><td>The convert main action costs 3 warehouse seeds instead of 4.</td></tr><tr><td>Merchant’s Harbour</td><td>T4 / T6</td><td>T6 trade costs 1 less oil (minimum 0), for the same souvenirs.</td></tr><tr><td>Village Fair</td><td>T3 / T6</td><td>T3 trade costs 1 less warehouse seed (minimum 0), for the same souvenirs.</td></tr><tr><td>Boat Workshop</td><td>T1 / T3</td><td>Moving 3 steps costs 2 oil instead of 3.</td></tr><tr><td>Gardener’s Lodge</td><td>T4 / T5</td><td>Pause costs 1 fruit instead of 2.</td></tr><tr><td>Seed Bank</td><td>T1 / T2</td><td>Dig costs 2 fruit instead of 3; its 2 payment tokens return after refill.</td></tr><tr><td>Ancient Treasury</td><td>T3 / T4</td><td>Harvest scores 4 ordinary points instead of 3.</td></tr><tr><td>Abandoned Fuel Depot</td><td>T2 / T6</td><td>Moving 2 steps costs 0 oil instead of 1.</td></tr><tr><td>Forgotten Orchard</td><td>T1 / T5</td><td>Rest costs 0 fruit; it still uses your one spell this turn.</td></tr></tbody></table><h3>Ending and setup</h3><p>Start with 4 warehouse seeds and 4 oil, nothing planted and no souvenirs. Use 6/8/10 islands at 2/3/4 players, with three balanced free faces on each. Move 1/2/3 clockwise steps for 0/1/3 oil. A player reaching 16 ordinary points triggers completion of the current round plus one full final round. Add 1 per island with your houses and 1 per unspent souvenir; ties share victory. No achievements or visible round counter.</p><p>Prototype limitation: without basic actions, unaffordable trade dice can cause resource stalls. Supply ports provide a recovery route; there is no automatic reroll or resource grant.</p></div></dialog>
+  <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-header"><h2>How to play</h2><button id="rules-close" class="icon-button" aria-label="Close rules">×</button></div><div class="rules-content"><h3>Version 38 — unlimited free fruit conversion</h3><p>Every island has three free T faces and no basic actions. Other normal travel pays 2 oil access, plus the face’s trade cost. T1: 3+3X oil. T2: 2+2X warehouse seeds. T3: pay X warehouse seeds for X souvenirs. T4: 1+X oil AND 1+X warehouse seeds. T5: 1+X new sprouts from supply. T6: pay X oil for X souvenirs. X counts all houses and other ships, not your own ship.</p><h3>All water sources</h3><ul><li>Own-controlled landing: you gain X water.</li><li>Other players on the landing island each receive 2 water per own house AND own ship there, regardless of control. A ship alone earns 2 water. The moving player receives no dividend from their own pieces. This replaces the old controller seed income.</li><li>Die use 2 or 3: previous user receives 2 water, unless the same player repeats.</li><li>Deep Well power: once between your turn starts, a batch of 2+ water gains 1 extra water.</li></ul><p>Water is immediately resolved on the lowest seed stage, one seed per water; excess is lost. No normal travel die or building reward gives water.</p><h3>Building and souvenirs</h3><p>Direct builds cost 2/4/6 warehouse seeds comparing own houses to all others combined, and require a die. T1 bonus 2 oil; T2 bonus 1 seed; T3 bonus 1 ordinary point; T4 bonus 1 seed; T5 bonus 1 sprout; T6 bonus 1 oil. No construction water. After normal travel or a main-action exploration-tile activation, optionally build once more at normal seed cost, without a die or reward.</p><p>Crossing over opponent ships strictly between departure and destination earns 1 souvenir each; starting and ending co-location do not. Each unspent souvenir scores 1 at the end or may replace 1 fruit cost; each spent souvenir becomes 1 warehouse seed. The payment input selects how many to substitute; otherwise fruit is spent first.</p><h3>Starting islands</h3><p>Your initial ship position is your permanent starting island. Passing or landing on it during movement gives 1 warehouse seed per house you have built anywhere, counted before your main action. Starting setup, leaving home and Pause do not trigger this income. Normal landing rewards still apply.</p><h3>Supply ports</h3><p>At 2/3/4 players, 2/2/3 islands are supply ports, evenly placed around the route. On a port, spend your main action to gain 2 oil without a die or payment. No X bonus, no die-track advancement and no follow-up build. Ports are public and independent of control.</p><h3>Die tracks</h3><p>Three dice stay public. First use gives the user 2 warehouse seeds after costs and rewards. Second and third uses give the actual previous user of that die 2 water; self-repeat awards none. On third use reroll only that die and clear its last user. Build, normal travel and exploration activation each advance one die. No turn-start rolls, no extra turns. Full costs must be available before first-use seeds.</p><h3>Exploration powers</h3><p>Reveal: main action, 2 oil, 2 ordinary points. Optionally claim the revealed power immediately: either listed face is free, or pay 2 oil to use any other public die. Later claiming is a main action. No base activation resource cost; using an unlisted face costs 2 oil. This does not change its face or reset its track. Fuel Exchange discounts normal travel access only. All twelve powers are once per player, permanent and never globally closed. Claiming advances one die track and replaces its normal travel reward; it gives no instant resource or score reward of its own. Effects are printed on each island and owned powers appear on each player.</p><p>These are base values, modified by owned powers below. One spell per own turn: Resupply costs 3 fruit, refills oil and warehouse separately to 4, then returns all 3 payment tokens as warehouse seeds (including souvenirs); warehouse ends at max(4, starting warehouse) + 3; Pause costs 2 before movement, skips movement and all landing rewards; Harvest costs 4 after the main action, scores 3 ordinary points; Rest costs 1, resets all spells without restoring this turn’s spell allowance. Souvenirs can substitute. During your own turn, freely convert 4 warehouse seeds to 1 fruit (3 with Nursery), any number of times between complete effects. It uses no main action, spell allowance or die track. Return the other 3 seeds to supply (2 with Nursery).</p><h3>All twelve powers</h3><table><thead><tr><th>Power</th><th>Either die</th><th>Permanent effect · once per player</th></tr></thead><tbody><tr><td>Deep Well</td><td>T5 / T6</td><td>Once between your turn starts, a water batch of 2+ gains 1 extra water.</td></tr><tr><td>Rain Terrace</td><td>T2 / T5</td><td>The first seed you plant each own turn enters sprouts instead of field.</td></tr><tr><td>Fuel Exchange</td><td>T1 / T4</td><td>Off-symbol normal travel access costs 1 oil instead of 2.</td></tr><tr><td>Nursery</td><td>T2 / T3</td><td>Free conversion costs 3 warehouse seeds instead of 4; unlimited between complete effects.</td></tr><tr><td>Merchant’s Harbour</td><td>T4 / T6</td><td>T6 trade costs 1 less oil (minimum 0), for the same souvenirs.</td></tr><tr><td>Village Fair</td><td>T3 / T6</td><td>T3 trade costs 1 less warehouse seed (minimum 0), for the same souvenirs.</td></tr><tr><td>Boat Workshop</td><td>T1 / T3</td><td>Moving 3 steps costs 2 oil instead of 3.</td></tr><tr><td>Gardener’s Lodge</td><td>T4 / T5</td><td>Pause costs 1 fruit instead of 2.</td></tr><tr><td>Seed Bank</td><td>T1 / T2</td><td>Dig costs 2 fruit instead of 3; its 2 payment tokens return after refill.</td></tr><tr><td>Ancient Treasury</td><td>T3 / T4</td><td>Harvest scores 4 ordinary points instead of 3.</td></tr><tr><td>Abandoned Fuel Depot</td><td>T2 / T6</td><td>Moving 2 steps costs 0 oil instead of 1.</td></tr><tr><td>Forgotten Orchard</td><td>T1 / T5</td><td>Rest costs 0 fruit; it still uses your one spell this turn.</td></tr></tbody></table><h3>Ending and setup</h3><p>Start with 4 warehouse seeds and 4 oil, nothing planted and no souvenirs. Use 6/8/10 islands at 2/3/4 players, with three balanced free faces on each. Move 1/2/3 clockwise steps for 0/1/3 oil. A player reaching 16 ordinary points triggers completion of the current round plus one full final round. Add 1 per island with your houses and 1 per unspent souvenir; ties share victory. No achievements or visible round counter.</p><p>Prototype limitation: without basic actions, unaffordable trade dice can cause resource stalls. Supply ports provide a recovery route; there is no automatic reroll or resource grant.</p></div></dialog>
   <div id="notice" class="notice" role="status" hidden></div>
   <noscript>This game needs JavaScript enabled. Open this HTML file in a current browser to play.</noscript>
   <script>
@@ -179,7 +179,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 37;
+  const SAVE_VERSION = 38;
   const COLORS = ['#276b62', '#c66d3e', '#6474a1', '#a45d7b'];
   // Every symbol occurs exactly once per player in its count's fixed tile set.
   // Only the order of the selected islands is shuffled for each game.
@@ -252,7 +252,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       3
     ],
     "upgrade": "nursery",
-    "effect": "The convert main action costs 3 warehouse seeds instead of 4.",
+    "effect": "Free conversion costs 3 warehouse seeds instead of 4; unlimited between complete effects.",
     "cost": {},
     "mode": "player"
   },
@@ -533,7 +533,6 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (player.built < 15 && player.warehouse >= cost) {
       state.market.forEach((card, index) => actions.push({ type: 'build', index, cardId: card.id, cardType: card.type, cost, buildBonus: buildCardReward(card.type) }));
     }
-    if (player.warehouse >= conversionCost(player)) actions.push({ type: 'convert', cost: conversionCost(player), reward: { resource: 'fruit', amount: 1 } });
     state.market.forEach((card, index) => {
       const price = cardCost(card, island, player);
       const reward=cardReward(card.type,X,player);if (player.oil >= price+(reward.payment?.oil||0)&&player.warehouse>=(reward.payment?.warehouse||0)) actions.push({ type: 'card', index, cardId: card.id, cardType: card.type, cost: price, reward: cardReward(card.type, X,player) });
@@ -637,6 +636,12 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (state.done) fail('The game is over.');
     if (!action || typeof action.type !== 'string') fail('Choose an action.');
     const player = currentPlayer(state), island = islandOf(state);
+    if(action.type==='convert'){
+      const cost=conversionCost(player);
+      if(!['move','action','explore','plant'].includes(state.stage)||player.warehouse<cost)fail('Need '+cost+' warehouse seeds to convert during your own turn.');
+      player.warehouse-=cost;player.fruit++;player.stats.seedsSpent+=cost-1;player.stats.conversions++;
+      record(state,'convert',player.name+' converts '+cost+' warehouse seeds to 1 fruit as a free action.',{cost,warehouseSeeds:cost,fruit:1});return state;
+    }
     if(action.type==='rent-build'){
       if(state.stage!=='plant'||!state.rentBuildAvailable||player.built>=15||player.warehouse<buildCost(island,player.id))fail('Optional post-rent build is unavailable.');
       const cost=buildCost(island,player.id);spendSeeds(player,cost);island.houses.push(player.id);island.controller=player.id;player.built++;player.stats.builds++;state.rentBuildAvailable=false;
@@ -706,9 +711,6 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       }
     } else if (action.type === 'supply') {
       addOil(player,2);record(state,'supply',player.name+' uses the supply port: +2 oil.',{island:player.position,resource:'oil',amount:2});
-    } else if (action.type === 'convert') {
-      player.warehouse -= legal.cost; player.fruit += 1; player.stats.seedsSpent += legal.cost-1; player.stats.conversions++;
-      record(state, 'convert', player.name + ' converts '+legal.cost+' warehouse seeds into 1 fruit as their main action.', { warehouseSeeds: legal.cost, fruit: 1 });
     } else if (action.type === 'basic') {
       const resource = legal.reward.resource;
       const amount = legal.reward.amount;
@@ -923,6 +925,13 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const reserve = state.round <= 13 ? 4 : 2;
     return Math.min(Math.max(0, player.warehouse - reserve), Math.max(0, target - player.field - player.sprouts));
   }
+  function fundMagicByConversion(state,policy){
+    if(state.magicUsed)return;const p=currentPlayer(state);let target=0;
+    if(state.stage==='plant')target=p.spells.harvest?spellCost(p,'harvest'):!p.spells.harvest&&p.spells.rest?spellCost(p,'rest'):0;
+    else if(p.oil<=1&&p.spells.dig)target=spellCost(p,'dig');
+    const reserve=policy==='waterplan'?2+(state.stage==='plant'?0:plannerPlantAmount(state)):state.stage==='plant'?0:2;
+    while(p.fruit+p.souvenirs<target&&p.warehouse>=conversionCost(p)+reserve)applyAction(state,{type:'convert'});
+  }
   function runBotTurn(state, options) {
     compatible(state);
     if (state.done) return state;
@@ -933,6 +942,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     let intent=null;
     intent=getIntent(state,policy);
     if (state.stage === 'move') {
+      fundMagicByConversion(state,policy);
       if(policy==='waterplan'){const amount=plannerPlantAmount(state);if(amount)applyAction(state,{type:'sow',amount});}
       smartPreMoveSpell(state, intent);
 
@@ -940,6 +950,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 
     }
     if (state.stage === 'action') {
+      fundMagicByConversion(state,policy);
       if(policy==='waterplan'){const amount=plannerPlantAmount(state);if(amount)applyAction(state,{type:'sow',amount});}
       smartFundingSpell(state, intent);
 
@@ -963,6 +974,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     }
     if(state.stage==='plant'&&state.rentBuildAvailable&&player.built<15&&player.warehouse>=buildCost(islandOf(state),player.id)+(policy==='waterplan'?2:0))applyAction(state,{type:'rent-build'});
     if (state.stage === 'plant') {
+      fundMagicByConversion(state,policy);
       if (availableSpell(state, 'harvest')) applyAction(state, { type: 'spell', spell: 'harvest' });
       else if (availableSpell(state, 'rest') && !player.spells.harvest && (!state.clockTriggered || state.round < state.totalRounds)) applyAction(state, { type: 'spell', spell: 'rest' });
 
@@ -1026,7 +1038,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v37';
+  const STORAGE = 'island-circuit-match-v38';
   const roles = { human: 'Human captain', explorer:'Explorer', waterplan:'Water planner', oilplan:'Oil planner', build80: 'Build 80%', spread7score: 'Spread 7 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil / warehouse to 4, then return 3 seeds', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
@@ -1038,7 +1050,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Explorer', type: 'spread7score' }, { name: 'Discoverer', type: 'explorer' }, { name: 'Scorer', type: 'score80' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 37 && stored.state?.version === 37 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 38 && stored.state?.version === 38 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
@@ -1052,7 +1064,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 37, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 38, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -1120,7 +1132,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const build=state.market.map((die,index)=>{const r=G.buildCardReward(die.type);return button('T'+die.type+' · +'+r.amount+' '+esc(r.resource==='warehouse'?'seed':r.resource),'data-build-card="'+index+'"',actions.some(a=>a.type==='build'&&a.index===index));}).join('');
     let out='<p class="island-landing">'+(island.controller===active().id?'Your landing: +'+X+' water. ':'')+'Visitors give other owners 2 water per house / ship.</p><div class="island-travel"><h3>Travel · X '+X+'</h3>'+travel+'</div>';
     out+='<div class="island-explore">'+tilePanel(island)+(can?island.exploration?tileButtons():button('Explore · 2 oil → 2 points','data-explore',actions.some(a=>a.type==='explore')):'')+(can&&state.stage==='explore'?button('Skip activation','data-skip-explore',true):'')+'</div>';
-    out+='<div class="island-build"><h3>Build · '+G.buildCost(island,active().id)+' seeds</h3>'+build+(can&&state.stage==='action'?button('Convert '+G.conversionCost(active())+' seeds → 1 fruit','data-convert',active().warehouse>=G.conversionCost(active()))+button('Pass main action','data-pass',true):'')+'</div>';
+    out+='<div class="island-build"><h3>Build · '+G.buildCost(island,active().id)+' seeds</h3>'+build+(can&&state.stage==='action'?button('Pass main action','data-pass',true):'')+'</div>';
     if(island.supplyPort)out+=button('⚓ Supply port · +2 oil · no die','data-supply',actions.some(a=>a.type==='supply'));
     if(can&&state.stage==='plant'&&state.rentBuildAvailable)out+=button('Build after rent · '+G.buildCost(island,active().id)+' seeds','data-rent-build',active().built<15&&active().warehouse>=G.buildCost(island,active().id));
     return out;
@@ -1174,7 +1186,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       body=`<h2>Prepare your next harvest.</h2>${state.rentBuildAvailable?'<p class="muted">Optional post-rent building is available on your island.</p>':''}<p class="turn-description">Planting commits warehouse seeds to the field. Keep some back if you want to build.</p><label class="plant-label" for="plant-number">Seeds to plant<input id="plant-number" class="plant-number" type="number" min="0" max="${p.warehouse}" value="${plantAmount}"></label><input id="plant-range" class="plant-range" type="range" min="0" max="${p.warehouse}" value="${plantAmount}" aria-label="Seeds to plant"><div class="plant-shortcuts"><button class="text-button" data-plant-preset="0">Keep all</button><button class="text-button" data-plant-preset="${p.warehouse}">Plant all ${p.warehouse}</button></div><div id="plant-preview" class="plant-preview"></div><button class="primary end-turn" data-end-turn>Plant & end turn →</button>`;
     }
     const sowNow=['move','action','explore'].includes(state.stage) ? `<div class="free-sow"><label for="sow-number">Plant now · free action</label><div class="free-sow-row"><input id="sow-number" type="number" min="1" max="${p.warehouse}" value="1" ${p.warehouse?'':'disabled'} aria-label="Warehouse seeds to plant now"><button class="text-button" data-sow ${p.warehouse?'':'disabled'}>Plant seeds</button></div><small>Use between complete effects. Seeds cannot return to the warehouse.</small></div>` : '';
-    $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Your turn</div>${phases()}${p.souvenirs?`<label class="turn-description">Souvenirs to use for the next fruit payment<input id="souvenir-payment" type="number" min="0" max="${p.souvenirs}" placeholder="Auto: fruit first" aria-label="Souvenirs used instead of fruit"></label>`:''}${sowNow}${body}`;
+    $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Your turn</div>${phases()}${p.souvenirs?`<label class="turn-description">Souvenirs to use for the next fruit payment<input id="souvenir-payment" type="number" min="0" max="${p.souvenirs}" placeholder="Auto: fruit first" aria-label="Souvenirs used instead of fruit"></label>`:''}${sowNow}<div class="free-convert"><button class="quiet" data-convert ${p.warehouse>=G.conversionCost(p)?'':'disabled'}>Convert ${G.conversionCost(p)} seeds → 1 fruit · free action</button><small>Unlimited during your turn, between complete effects.</small></div>${body}`;
     updatePlantPreview();
   }
   function updatePlantPreview() {
@@ -1277,7 +1289,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function exportChoicesCsv() {
     if (!started || !state.done) return;
     const types = {'rent-build':'Build after rent', explore:'Explore island',tile:'Activate exploration tile','skip-explore':'Skip optional activation', move: 'Move', build: 'Build', 'build-card': 'Build die', basic: 'Basic rent', card: 'Travel die', convert: 'Convert seeds', spell: 'Fruit magic', plant: 'Plant seeds', pass: 'Pass', 'end-turn': 'End turn' };
-    const stages = {'rent-build':'Optional build', explore:'Main action',tile:'Exploration activation','skip-explore':'Exploration activation', move: 'Move', build: 'Main action', 'build-card': 'Main action', basic: 'Main action', card: 'Main action', convert: 'Main action', spell: 'Free action', plant: 'Free action', pass: 'Main action', 'end-turn': 'End turn' };
+    const stages = {'rent-build':'Optional build', explore:'Main action',tile:'Exploration activation','skip-explore':'Exploration activation', move: 'Move', build: 'Main action', 'build-card': 'Main action', basic: 'Main action', card: 'Main action', convert: 'Free action', spell: 'Free action', plant: 'Free action', pass: 'Main action', 'end-turn': 'End turn' };
     const headers = ['sequence', 'global_turn', 'player_turn', 'choice_in_turn', 'player', 'captain_type', 'stage', 'choice', 'island_position', 'island_id', 'option', 'die_id', 'steps', 'amount', 'cost', 'cost_resource', 'trade_payment', 'detail'];
     const ownTurns = state.players.map(() => 0), positions = state.players.map((_, i) => Math.floor(((i - state.firstPlayer + state.players.length) % state.players.length) * state.islands.length / state.players.length));
     let globalTurn = 0, choiceInTurn = 0, sequence = 0;
@@ -1304,7 +1316,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   $('#export-game').addEventListener('click',()=>{
     if(!started)return;
     const exportedState=G.clone(state);for(const key of ['round','totalRounds','triggerRound'])delete exportedState[key];
-    const output={format:'island-circuit-match-v37',version:37,exportedAt:new Date().toISOString(),state:exportedState};
+    const output={format:'island-circuit-match-v38',version:38,exportedAt:new Date().toISOString(),state:exportedState};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
