@@ -1,6 +1,6 @@
 起屋遊戲：完整說明書
 
-版本 v46，更新日期 2026-11-18。包括租後建屋、手信及新 T1–T6。此版沒有基本行動、成就卡或輪次紀錄。
+版本 v47，更新日期 2026-11-18。包括租後建屋、手信及新 T1–T6。此版沒有基本行動、成就卡或輪次紀錄。
 
 配件
 
@@ -126,7 +126,7 @@ T3／T6 的 X 在效果開始時固定，X＝0 時付 0 得 0，仍正常推進�
 | Fuel Exchange | T1／T4 | 普通旅遊使用任何公開骰均免進入費；探索進入費不變。 |
 | Nursery | T2／T3 | 免費換果只需2倉種子換1果實，不限次數。 |
 | Merchant’s Harbour | T4／T6 | T3及T6交換費均為0，仍取得X手信；非匹配進入費另付。 |
-| Village Fair | T3／T6 | T3及T6取得2X手信，交換費仍按X計；有Merchant’s Harbour則交換費為0。 |
+| Village Fair | T3／T6 | T3及T6取得X＋2手信，交換費仍按X計；有Merchant’s Harbour則交換費為0。 |
 | Boat Workshop | T1／T3 | 移動1、2、3步均不需油；不減第4步移動費。 |
 | Gardener’s Lodge | T4／T5 | 暫停不用果實，仍須牌可用並佔一次施法。 |
 | Seed Bank | T1／T2 | 每次經過或停在Home，每間自己已建屋收入共2倉種子，取代原本1粒。 |
@@ -246,12 +246,12 @@ v43 六項能力更新
 
 - Deep Well：每次實際獲得一批正數水，該批額外＋2水；不限次數，不遞迴觸發。
 - Merchant’s Harbour：T3及T6交換費均為0，仍取得X手信；非匹配進入費另付。
-- Village Fair：T3及T6取得2X手信，交換費仍按X計；有Merchant’s Harbour則交換費為0。
+- Village Fair：T3及T6取得X＋2手信，交換費仍按X計；有Merchant’s Harbour則交換費為0。
 - Boat Workshop：移動1、2、3步均不需油；不減第4步移動費。
 - Ancient Treasury：收成祭給4普通分，費用仍為4果實。
 - Abandoned Fuel Depot：額外可選付3油移動4步；原本1–3步費用不變。
 
-兩個交易能力可疊加：有Harbour及Fair時，T3／T6交換費為0且取得2X手信，但不匹配島仍付普通旅遊進入費。Boat Workshop只令1–3步免油，若同時有Fuel Depot，4步仍付3油。四步也照常結算途中超船手信、Home收入及目的地停靠。能力取得骰面、每人一次、26普通分只完成當輪等規則不變。
+兩個交易能力可疊加：有Harbour及Fair時，T3／T6交換費為0且取得X＋2手信，但不匹配島仍付普通旅遊進入費。Boat Workshop只令1–3步免油，若同時有Fuel Depot，4步仍付3油。四步也照常結算途中超船手信、Home收入及目的地停靠。能力取得骰面、每人一次、26普通分只完成當輪等規則不變。
 
 
 能力導向機械人
@@ -280,6 +280,11 @@ v46 能力AI及水規劃分身
 | Combo → Water | 同Combo Hunter，但優先考慮水相關組合 | 水規劃策略 |
 | Rush 3 → Water | 同Power Rush 3 | 水規劃策略 |
 
-Combo Hunter的新組合清單：Nursery＋Treasury＋Orchard（低成本換果、雙施法及收成得分）、Harbour＋Fair（免費雙倍手信）、Seed Bank＋Nursery（Home種子轉果）、Seed Bank＋Boat Workshop（免費移動加速Home循環）、Gardener’s Lodge＋Orchard（免費暫停搭配另一魔法）、Deep Well＋Rain Terrace、Deep Well＋Orchard（水及魔法循環）。不再把Boat Workshop＋Fuel Depot當優先組合。水分身優先考慮後兩項水組合，再看換果及施法組合。
+Combo Hunter的新組合清單：Nursery＋Treasury＋Orchard（低成本換果、雙施法及收成得分）、Harbour＋Fair（免費X＋2手信）、Seed Bank＋Nursery（Home種子轉果）、Seed Bank＋Boat Workshop（免費移動加速Home循環）、Gardener’s Lodge＋Orchard（免費暫停搭配另一魔法）、Deep Well＋Rain Terrace、Deep Well＋Orchard（水及魔法循環）。不再把Boat Workshop＋Fuel Depot當優先組合。水分身優先考慮後兩項水組合，再看換果及施法組合。
 
 水階段沿用Water planner的移動前／主行動前種植、吸水容量估算、留種及行動估值；仍爭取得分，並非只囤水。第3能力取得後，當回合餘下的留種／種植已切換水規劃；下一回合起完整採用水移動與主行動選擇。AI不查看未知板塊順序。
+
+
+v47 Village Fair
+
+Village Fair令T3及T6的收益由X手信改為X＋2手信，交換費仍按X計；Harbour仍免除交換費。X＝0時付0交換費並獲得2手信，非匹配進入費仍另計。例X＝1／3／6時，Fair收益為3／5／8手信。其他能力、AI切換條件及26普通分完成當輪的終局規則不變。v46勝率報告是修改前的結果。
