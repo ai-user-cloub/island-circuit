@@ -162,20 +162,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       <p class="setup-footnote">16 ordinary points + final round · 6 / 8 / 10-island maps · provisional starting setup</p>
     </form>
   </dialog>
-  <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-header"><h2>How to play</h2><button id="rules-close" class="icon-button" aria-label="Close rules">×</button></div><div class="rules-content">
-    <p>When anyone reaches 16 ordinary points, finish the current round, then play one final full round with equal turns. At the end, add one final point for every distinct island with at least one house of your colour. You do not need to control those islands. More own houses on the same island do not add further final points. No houses means zero bonus. Highest total wins; ties share the victory. Each player has 15 building pieces.</p>
-    <h3>Maps for 2–4 players</h3><p>Two players use 6 islands (I04, I05, I06, I08, I10, I14), three use those six plus I03 and I11, and four add I02 and I09. Every symbol appears twice with two players, 2–3 times with three, or 3–4 times with four. Shuffle the chosen islands into a clockwise circuit. Ships start as evenly spaced as possible: positions 1 / 4, 1 / 3 / 6, or 1 / 3 / 6 / 8.</p>
-    <p>Dice stay available after use. Building, normal travel and exploration-tile activation each advance the chosen die once, after fully paying and resolving the action. The first-use seed cannot pay for that same action. Basic actions, conversion, passing and exploring without activating a tile do not advance a die. Track water is automatic, cannot be redirected, and is lost if the previous user has no seeds to advance. A reroll grants no extra action and does not change turn order. Each island directly shows its basic actions (+1 point, +2 warehouse seeds or +2 water) and free travel numbers (T1/T6, T2/T3 or T4/T5). Use a matching die free, or pay 2 oil for a nonmatching die. Basic actions need no die.</p><h3>Your turn</h3><ol><li>Resolve any permanent start-of-turn income. Do not roll dice at the start of your turn.</li><li>Move clockwise: 1 step is free, 2 steps cost 1 oil, 3 steps cost 3 oil.</li><li>Land on an opponent’s island: its controller receives 2 warehouse seeds from the supply. Land on your own: receive X water.</li><li>Choose one main action: build, explore an unknown island, activate a revealed tile, rent using a basic effect or one available die, or convert 4 warehouse seeds into 1 fruit. You may also pass.</li><li>Optionally plant more seeds, then end your turn.</li></ol><p>X equals all houses on this island plus one for each other player's ship currently there. Your own ship does not count. Count ships when each effect resolves; an empty island with another ship has X = 1. Other ships do not change building cost, fixed basic effects, or final island coverage points. Conversion uses four seeds already in your warehouse: move one to your fruit space and return the other three to the supply. It uses your whole main action, so it cannot be combined with building or renting that turn. Planting is a free action between complete effects during your own turn, including before sailing or after landing. You may plant several times. Seeds cannot return to the warehouse. Resolve every point of a single water reward before planting again.</p>
-    <h3>Build with a die</h3><p>You must choose one available T die to build. After paying the full 2, 4 or 6 warehouse seeds, place your house and take control. There is no construction water. Use the chosen die for its build bonus: T1 +2 oil; T2 +1 warehouse seed; T3 +1 point; T4 +1 warehouse seed; T5 or T6 +2 water. Any available die works on any island. The selected die's travel effect does not apply. A seed gained from the die cannot pay for this same build.</p>
-    <h3>Building and control</h3><p>Before building, compare your house count on this island with all other players' houses there combined. If yours is greater, pay 2 warehouse seeds; if equal, pay 4; if theirs is greater, pay 6. An empty island costs 4. Ships do not affect the price. The last builder controls the island. Old houses remain. Building grants no X water. Only a later landing on your controlled island grants X water. T5/T6 building rewards still grant their fixed 2 water.</p>
-    <h3>Water and fruit</h3><p>One water advances one lowest-level seed: field → sprout → fruit. Every field seed must sprout before any sprout ripens. Water cannot be stored, and excess water is lost. Warehouse seeds cannot absorb water.</p>
-    <h3>Travel dice</h3><p>Use one available die, free when its T number is printed on the island or pay 2 oil. Everyone receives X regardless of control: count all houses plus other ships currently on this island. T1 oil, T2 warehouse seeds, and T5/T6 water add X. T3 scores X and grants a fixed 2 warehouse seeds; its seed reward does not increase with X or control. T4 scores 1 + X. You may then use Harvest if ready, affordable, and you have not used a spell this turn. All three dice remain available. Every die has its own three-use track: first use gives the user 1 warehouse seed; second and third uses give the previous user of that same die 1 water, unless the previous user is the current user. Update the last-user marker after each use. After the third use, reroll only that die and clear its use count and last user. All player counts use the same three tracks of three spaces. Duplicate faces are allowed.</p>
-    <table><thead><tr><th>Printed on island</th><th>Basic effect or free dice</th></tr></thead><tbody><tr><td>+1 point</td><td>Basic: +1 score</td></tr><tr><td>T1 / T6</td><td>Free dice: T1 oil 3 + X; T6 water 3 + X</td></tr><tr><td>T2 / T3</td><td>Free dice: T2 seeds 2 + X; T3 score X + fixed 2 seeds</td></tr><tr><td>+2 seeds</td><td>Basic: +2 warehouse seeds</td></tr><tr><td>T4 / T5</td><td>Free dice: T4 score 1 + X; T5 water 4 + X</td></tr><tr><td>+2 water</td><td>Basic: +2 water</td></tr></tbody></table> <!-- taste-skill-ignore: these are the game's original printed island symbols -->
-    <h3>Fruit magic</h3><p>At most one spell per own turn. Spent fruit immediately returns to your warehouse, and can be spent or planted this turn. Used spells need Rest to refresh.</p><ul><li><strong>Resupply · 3 fruit:</strong> after the spent fruit returns to your warehouse, refill oil and warehouse seeds separately to 4; higher amounts stay unchanged.</li><li><strong>Pause · 2 fruit, before movement:</strong> stay put, skip all landing rewards, then build or rent normally.</li><li><strong>Harvest · 4 fruit, after your main action:</strong> +3 score.</li><li><strong>Rest · 1 fruit:</strong> refresh all four spells, including Rest. It does not restore this turn’s spell allowance.</li></ul>
-    <h3>Final island coverage bonus</h3><p>Count every distinct island containing at least one house of your colour: each gives you +1 final point, regardless of its controller. Three own houses on one island plus one own house on another give +2 points, not +4. Several players may each earn +1 from the same island when it contains each player's colour. An opponent taking control does not remove your houses or your coverage point. Remaining resources give no additional points.</p>
-    <h3>Explore an island</h3><p>Each island starts with one unknown exploration tile. Shuffle all 12 unique tiles; reveal one without replacement when an island is first explored. Unused tiles remain hidden. Explore is your main action: pay 2 oil, gain 2 ordinary points (which count toward the 16-point trigger), and reveal that island’s permanent tile. You may then activate it once immediately, or skip. Activation requires using an available die with the exact printed T number and paying the additional cost; 2 oil cannot substitute for a missing die. Later visitors activate it as their whole main action. Choose the tile effect instead of the die’s usual travel effect or building bonus. The die advances its use track; only its third use causes a reroll.</p><p>Spend fruit by returning it to your warehouse; spend seeds and oil to supply. All costs must be affordable before paying. Resolve an activation completely before planting or casting magic. Between the reveal and optional activation, normal free planting, eligible magic are allowed. Do not receive discovery points again. Repeatable effects have no X bonus. Once-per-player upgrades stay with you regardless of control. Once-total tiles close only when activated, not when revealed.</p><table><thead><tr><th>Tile</th><th>Die</th><th>Cost</th><th>Effect</th><th>Limit</th></tr></thead><tbody><tr><td>Deep Well</td><td>T5</td><td>1 warehouse seeds</td><td>Water = field + sprouts, max 6</td><td>Repeatable</td></tr><tr><td>Rain Terrace</td><td>T6</td><td>1 oil</td><td>Water = warehouse seeds, max 6</td><td>Repeatable</td></tr><tr><td>Fuel Exchange</td><td>T1</td><td>2 warehouse seeds</td><td>+6 oil</td><td>Repeatable</td></tr><tr><td>Nursery</td><td>T2</td><td>1 fruit</td><td>+5 warehouse seeds</td><td>Repeatable</td></tr><tr><td>Merchant’s Harbour</td><td>T4</td><td>1 fruit</td><td>1 point per 3 oil, max 3 points; keep oil</td><td>Repeatable</td></tr><tr><td>Village Fair</td><td>T3</td><td>2 warehouse seeds</td><td>1 point per island with your house, max 3</td><td>Repeatable</td></tr><tr><td>Boat Workshop</td><td>T1</td><td>2 warehouse seeds</td><td>Permanent: 3 steps cost 2 oil</td><td>Once per player</td></tr><tr><td>Gardener’s Lodge</td><td>T5</td><td>1 fruit</td><td>+1 water now and at the start of every future own turn</td><td>Once per player</td></tr><tr><td>Seed Bank</td><td>T2</td><td>2 oil</td><td>+1 warehouse seed now and at the start of every future own turn</td><td>Once per player</td></tr><tr><td>Ancient Treasury</td><td>T4</td><td>2 fruit</td><td>+4 points; closes permanently</td><td>Once total</td></tr><tr><td>Abandoned Fuel Depot</td><td>T1</td><td>1 warehouse seeds</td><td>+8 oil; closes permanently</td><td>Once total</td></tr><tr><td>Forgotten Orchard</td><td>T6</td><td>3 warehouse seeds</td><td>+2 fruit directly from supply; closes permanently</td><td>Once total</td></tr></tbody></table><p>Deep Well counts field seeds plus sprouts after paying its cost, maximum 6 water. Rain Terrace counts warehouse seeds at activation, maximum 6. Merchant’s Harbour scores floor(oil / 3), capped at 3, without spending oil. Village Fair counts distinct islands with your colour, capped at 3, without requiring control. Upgrade income starts next own turn, before movement; its immediate award occurs only once when acquired. Different players can acquire the same upgrade.</p><h3>Captain styles</h3><ul><li><strong>Human player</strong> controls their own turn on this device.</li><li><strong>Build 80%</strong> prefers building on 80% of own turns 1–15; <strong>Rent 80%</strong> prefers renting on 80% of own turns 1–15. Both use Score 80% on own turns 16 onward: 80% immediate scoring, 20% development.</li><li><strong>Build 9 → Rent 9</strong> always prefers building on own turns 1–9, then renting on own turns 10 onward.</li><li><strong>Score 80%</strong> prefers immediate points on 80% of turns and development on 20%. It considers every legal destination, including islands controlled by the leader.</li><li><strong>Spread → Score</strong> prioritizes its first house on each island during own turns 1–9. It switches to Score 80% after covering every island or completing turn 9, whichever comes first. It uses resource actions when it cannot spread and avoids duplicate building during the spread phase.</li><li><strong>Spread 7 → Score</strong> spreads on turns 1–7, then uses Score 80% on turns 8 onward. It keeps this fixed schedule even when full coverage is reached early.</li></ul><p>The six planned styles share legal movement and resource-management heuristics. They value the marginal coverage bonus: a first own house on an island adds 1 final point; another own house there adds 0. Phase plans do not use an 80% coin. Every planned style falls back to a legal alternative if its preferred action is unavailable, so a build phase does not guarantee a successful build every turn. Each captain slot may use any type, including duplicates.</p>
-    <h3>Provisional setup</h3><p>Each captain starts with 4 warehouse seeds, 4 oil, no field seeds, sprouts or fruit, 0 points and all four spells ready. Ships start evenly spaced; starting placement has no landing reward. Roll all three dice at setup and set every track to zero uses with no previous user. Do not reroll for the first turn. All resources are public. These setup choices come from the provisional rulebook and have not been balance-tested.</p>
-  </div></dialog>
+  <dialog id="rules-dialog" class="rules-dialog"><div class="dialog-header"><h2>How to play</h2><button id="rules-close" class="icon-button" aria-label="Close rules">×</button></div><div class="rules-content"><h3>Version 27 — new travel and water</h3><p>Every island has three free T faces and no basic actions. Other normal travel pays 2 oil access, plus the face’s trade cost. T1: 3+3X oil. T2: 2+2X warehouse seeds. T3: pay X warehouse seeds for X souvenirs. T4: 1+X oil AND 1+X warehouse seeds. T5: 1+X new sprouts from supply. T6: pay X oil for X souvenirs. X counts all houses and other ships, not your own ship.</p><h3>All water sources</h3><ul><li>Own-controlled landing: you gain X water.</li><li>Other players on the landing island each receive 2 water per own house AND own ship there, regardless of control. A ship alone earns 2 water. The moving player receives no dividend from their own pieces. This replaces the old controller seed income.</li><li>Die use 2 or 3: previous user receives 2 water, unless the same player repeats.</li><li>Deep Well: pay 1 seed with T5; water equals field + sprouts, max 6.</li><li>Rain Terrace: pay 1 oil with T6; water equals warehouse seeds, max 6.</li><li>Garden Tools: 1 water on acquisition and each future own turn start.</li></ul><p>Water is immediately resolved on the lowest seed stage, one seed per water; excess is lost. No normal travel die or building reward gives water.</p><h3>Building and souvenirs</h3><p>Direct builds cost 2/4/6 warehouse seeds comparing own houses to all others combined, and require a die. T1 bonus 2 oil; T2 bonus 1 seed; T3 bonus 1 ordinary point; T4 bonus 1 seed; T5 bonus 1 sprout; T6 bonus 1 oil. No construction water. After normal travel or a main-action exploration-tile activation, optionally build once more at normal seed cost, without a die or reward.</p><p>Crossing over opponent ships strictly between departure and destination earns 1 souvenir each; starting and ending co-location do not. Each unspent souvenir scores 1 at the end or may replace 1 fruit cost; spent souvenirs disappear and never return seeds. The payment input selects how many to substitute; otherwise fruit is spent first.</p><h3>Die tracks</h3><p>Three dice stay public. First use gives the user 1 warehouse seed after costs and rewards. Second and third uses give the actual previous user of that die 2 water; self-repeat awards none. On third use reroll only that die and clear its last user. Build, normal travel and exploration activation each advance one die. No turn-start rolls, no extra turns. Full costs must be available before first-use seeds.</p><h3>Exploration and magic</h3><p>Explore an unknown island: pay 2 oil, gain 2 ordinary points, reveal one of twelve unique tiles. Optionally activate immediately with the exact die and cost. Later use is a main action. See Island discoveries for revealed effects. Water tiles and Garden Tools are listed above; other tiles provide resources, points or upgrades. Once-total tiles close on first successful activation, not reveal.</p><p>One spell per own turn: Resupply costs 3 fruit, refills oil and warehouse separately to 4 after returning spent real fruit; Pause costs 2 before movement, skips movement and all landing rewards; Harvest costs 4 after the main action, scores 3 ordinary points; Rest costs 1, resets all spells without restoring this turn’s spell allowance. Souvenirs can substitute. Four warehouse seeds can convert to one fruit as the main action, returning three to supply.</p><h3>Ending and setup</h3><p>Start with 4 warehouse seeds and 4 oil, nothing planted and no souvenirs. Use 6/8/10 islands at 2/3/4 players, with three balanced free faces on each. Move 1/2/3 clockwise steps for 0/1/3 oil. A player reaching 16 ordinary points triggers completion of the current round plus one full final round. Add 1 per island with your houses and 1 per unspent souvenir; ties share victory. No achievements or visible round counter.</p><p>Prototype limitation: without basic actions, unaffordable trade dice can cause resource stalls. This version adds no automatic bailout rule.</p></div></dialog>
   <div id="notice" class="notice" role="status" hidden></div>
   <noscript>This game needs JavaScript enabled. Open this HTML file in a current browser to play.</noscript>
   <script>
@@ -187,7 +174,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const SAVE_VERSION = 26;
+  const SAVE_VERSION = 27;
   const COLORS = ['#276b62', '#c66d3e', '#6474a1', '#a45d7b'];
   // Every symbol occurs exactly once per player in its count's fixed tile set.
   // Only the order of the selected islands is shuffled for each game.
@@ -204,14 +191,14 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     E: { icon: '🎫', name: 'Blue ticket', zh: '藍票', basic: null },
     F: { icon: '🇪🇺', name: 'Travel pass', zh: '旅遊證', basic: null }
   };
-  const CARDS = {
-    1: { id: 1, name: 'Oil supply', zh: '補油 3', symbol: 'D', resource: 'oil', base: 3 },
-    2: { id: 2, name: 'Seed stop', zh: '補種子 2', symbol: 'E', resource: 'warehouse', base: 2 },
-    3: { id: 3, name: 'Island excursion', zh: '得分 X＋補種子 2', symbol: 'E', resource: 'score', base: 0, seeds: 2 },
-    4: { id: 4, name: 'Coastal visit', zh: '得分 1＋X', symbol: 'F', resource: 'score', base: 1 },
-    5: { id: 5, name: 'Rain harvest', zh: '補水 4', symbol: 'F', resource: 'water', base: 4 },
-    6: { id: 6, name: 'Freshwater stop', zh: '補水 3', symbol: 'D', resource: 'water', base: 3 }
-  };
+  const CARDS={
+  1:{id:1,name:'Oil supply',zh:'石油 3＋3X',resource:'oil',base:3,scale:3},
+  2:{id:2,name:'Seed supply',zh:'種子 2＋2X',resource:'warehouse',base:2,scale:2},
+  3:{id:3,name:'Seed souvenirs',zh:'X 種子換 X 手信',resource:'souvenirs',base:0,scale:1},
+  4:{id:4,name:'Mixed supplies',zh:'石油及種子各 1＋X',resource:'oil',base:1,scale:1},
+  5:{id:5,name:'Sprout nursery',zh:'芽種子 1＋X',resource:'sprouts',base:1,scale:1},
+  6:{id:6,name:'Oil souvenirs',zh:'X 石油換 X 手信',resource:'souvenirs',base:0,scale:1}};
+  const FREE_TRAVEL={I01:[1,3,5],I02:[1,3,4],I03:[1,2,6],I04:[1,2,3],I05:[4,5,6],I06:[1,2,4],I07:[1,3,6],I08:[3,5,6],I09:[2,5,6],I10:[1,2,5],I11:[3,4,5],I12:[1,4,5],I13:[1,4,6],I14:[3,4,6],I15:[1,5,6]};
   const SPELLS = {
     dig: { name: 'Resupply', zh: '補給', cost: 3 },
     pause: { name: 'Stay', zh: '暫停', cost: 2 },
@@ -233,6 +220,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     depot:{name:'Abandoned Fuel Depot',die:1,cost:{warehouse:1},effect:'+8 oil; closes permanently',kind:'oil',amount:8,mode:'once'},
     orchard:{name:'Forgotten Orchard',die:6,cost:{warehouse:3},effect:'+2 fruit directly from supply; closes permanently',kind:'fruit',amount:2,mode:'once'}
   };
+  function payFruit(player,cost,requested){
+    const gifts=requested===undefined?Math.max(0,cost-player.fruit):requested;
+    if(!integer(gifts)||gifts>cost||gifts>player.souvenirs||player.fruit<cost-gifts)fail('Cannot pay this fruit cost.');
+    player.souvenirs-=gifts;player.souvenirsSpent+=gifts;player.fruit-=cost-gifts;player.warehouse+=cost-gifts;return gifts;
+  }
   function movementCost(player,steps){return steps===3&&player.upgrades?.boat?2:MOVE_COST[steps];}
   function tileReward(state,player,island){
     const d=EXPLORE_TILES[island.exploration?.id];if(!d)return null;
@@ -245,15 +237,15 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function tileActions(state,player,island){
     const t=island.exploration,d=EXPLORE_TILES[t?.id];if(!d||t.claimedBy!==null&&d.mode==='once'||d.upgrade&&player.upgrades[d.upgrade])return [];
-    if(Object.entries(d.cost).some(([resource,amount])=>player[resource]<amount))return [];
+    if(Object.entries(d.cost).some(([resource,amount])=>(resource==='fruit'?player.fruit+player.souvenirs:player[resource])<amount))return [];
     return state.market.flatMap((die,index)=>die.type===d.die?[{type:'tile',index,cardId:die.id,cardType:die.type,tile:t.id,cost:0,payment:d.cost,reward:tileReward(state,player,island),upgrade:d.upgrade}]:[]);
   }
-  function activateTile(state,legal){
+  function activateTile(state,legal,requested){
     const p=currentPlayer(state),island=islandOf(state),t=island.exploration,d=EXPLORE_TILES[t.id];
     for(const [resource,amount]of Object.entries(d.cost)){
       if(resource==='warehouse')spendSeeds(p,amount);
       else if(resource==='oil'){p.oil-=amount;p.stats.oilSpent+=amount;}
-      else{p.fruit-=amount;p.warehouse+=amount;}
+      else{payFruit(p,amount,requested);}
     }
     const reward=tileReward(state,p,island),die=state.market[legal.index];
     if(d.upgrade)p.upgrades[d.upgrade]=true;
@@ -307,7 +299,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function useDie(state,index,source){
     const die=state.market[index],p=currentPlayer(state),use=(die.uses||0)+1,previous=die.lastUser??null,face=die.type;
     if(use===1){addSeeds(p,1);record(state,'die-track',p.name+' makes the first use of '+die.id+' and gains 1 warehouse seed.',{cardId:die.id,cardType:face,use,source,resource:'warehouse',amount:1,recipient:p.id});}
-    else if(previous!==null&&previous!==p.id){giveWater(state,previous,1,'die-track');record(state,'die-track',state.players[previous].name+' receives 1 water from '+p.name+' using '+die.id+'.',{cardId:die.id,cardType:face,use,source,resource:'water',amount:1,recipient:previous});}
+    else if(previous!==null&&previous!==p.id){giveWater(state,previous,2,'die-track');record(state,'die-track',state.players[previous].name+' receives 2 water from '+p.name+' using '+die.id+'.',{cardId:die.id,cardType:face,use,source,resource:'water',amount:2,recipient:previous});}
     else record(state,'die-track',p.name+' uses '+die.id+' again; no water is awarded.',{cardId:die.id,cardType:face,use,source,amount:0,recipient:null});
     die.uses=use;die.lastUser=p.id;
     if(use===3)rollDie(state,die);
@@ -316,6 +308,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     state.stage = 'move';
     state.magicUsed = false;
 
+    state.rentBuildAvailable=false;
     state.mainActionType = null;
     state.botIntent = null;
     state.turnNumber = state.completedTurns + 1;
@@ -335,7 +328,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const symbols = ['A', 'D', 'E', 'B', 'F', 'C']; // Preserve printed island IDs while relabelling actions.
     let serial = 1;
     for (let i = 0; i < symbols.length; i++) for (let j = i + 1; j < symbols.length; j++) {
-      islands.push({ id: 'I' + String(serial++).padStart(2, '0'), symbols: [symbols[i], symbols[j]], houses: [], controller: -1, exploration: null });
+      islands.push({ id: 'I' + String(serial++).padStart(2, '0'), symbols: FREE_TRAVEL['I'+String(serial-1).padStart(2,'0')].map(t=>'T'+t), houses: [], controller: -1, exploration: null });
     }
     const selected = new Set(MAP_SETS[people.length]);
     state.islands = shuffle(state, MAP_SETS[people.length].map(id => islands.find(island => island.id === id)));
@@ -347,7 +340,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     state.players = people.map((person, i) => ({
       id: i, name: String(person.name || ('Player ' + (i + 1))).slice(0, 40), type: person.type, color: COLORS[i],
       position: Math.floor(((i - state.firstPlayer + people.length) % people.length) * state.islands.length / people.length),
-      warehouse: 4, field: 0, sprouts: 0, fruit: 0, oil: 4, score: 0, built: 0, turns: 0,
+      souvenirs:0, souvenirsGained:0, souvenirsSpent:0, warehouse: 4, field: 0, sprouts: 0, fruit: 0, oil: 4, score: 0, built: 0, turns: 0,
       initialSeeds: 4, initialOil: 4,
       scoreBeforeBonus: null, endgame: null, upgrades: {boat:false,garden:false,bank:false},
       spells: { dig: true, pause: true, harvest: true, rest: true }, stats: stats()
@@ -359,15 +352,12 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     beginTurn(state);
     return state;
   }
-  function cardReward(type, houses) {
-    const card = CARDS[typeof type === 'object' ? type.type : type];
-    if (!card || !integer(houses)) fail('Invalid travel card or house count.');
-    const reward = { resource: card.resource, amount: card.base + houses };
-    if (card.water) reward.water = card.water;
-    if (card.seeds) reward.seeds = card.seeds;
-    return reward;
+  function cardReward(type,X){
+    type=typeof type==='object'?type.type:type;const def=CARDS[type];if(!def||!integer(X))fail('Invalid travel effect.');
+    const reward={resource:def.resource,amount:def.base+def.scale*X};
+    if(type===3)reward.payment={warehouse:X};if(type===6)reward.payment={oil:X};if(type===4)reward.seeds=1+X;return reward;
   }
-  function cardCost(card, island) { return island.symbols.includes(CARDS[card.type].symbol) ? 0 : 2; }
+  function cardCost(die,island){return island.symbols.includes('T'+die.type)?0:2;}
   function otherShips(state, position, playerId) {
     return state.players.filter(player => player.id !== playerId && player.position === position).length;
   }
@@ -380,7 +370,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     return own > others ? 2 : own === others ? 4 : 6;
   }
   function buildCardReward(type) {
-    return { 1: { resource: 'oil', amount: 2 }, 2: { resource: 'warehouse', amount: 1 }, 3: { resource: 'score', amount: 1 }, 4: { resource: 'warehouse', amount: 1 }, 5: { resource: 'water', amount: 2 }, 6: { resource: 'water', amount: 2 } }[type];
+    return { 1: { resource: 'oil', amount: 2 }, 2: { resource: 'warehouse', amount: 1 }, 3: { resource: 'score', amount: 1 }, 4: { resource: 'warehouse', amount: 1 }, 5: { resource: 'sprouts', amount: 1 }, 6: { resource: 'oil', amount: 1 } }[type];
   }
   function waterResult(player, amount) {
     let field = player.field, sprouts = player.sprouts, fruit = player.fruit, remaining = amount;
@@ -402,14 +392,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function addSeeds(player, amount) { player.warehouse += amount; player.stats.seedsGained += amount; }
   function addOil(player, amount) { player.oil += amount; player.stats.oilGained += amount; }
   function spendSeeds(player, amount) { player.warehouse -= amount; player.stats.seedsSpent += amount; }
-  function landing(state) {
-    const player = currentPlayer(state), island = islandOf(state);
-    if (island.controller === player.id) giveWater(state, player.id, effectiveX(state, player.position, player.id), 'landing');
-    else if (island.controller >= 0) {
-      const owner = state.players[island.controller];
-      addSeeds(owner, 2); owner.stats.visitorSeeds += 2;
-      record(state, 'visitor', owner.name + ' receives 2 warehouse seeds because ' + player.name + ' landed on their island.', { amount: 2, island: player.position, owner: owner.id }, owner.id);
-    }
+  function landing(state){
+    const p=currentPlayer(state),island=islandOf(state);
+    if(island.controller===p.id)giveWater(state,p.id,effectiveX(state,p.position,p.id),'landing');
+    for(const q of state.players)if(q.id!==p.id){const houses=island.houses.filter(id=>id===q.id).length,ships=q.position===p.position?1:0,amount=2*(houses+ships);if(amount)giveWater(state,q.id,amount,'visitor-houses-ships');}
   }
   function legalMoves(state) {
     if (state.done || state.stage !== 'move') return [];
@@ -423,11 +409,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (player.built < 15 && player.warehouse >= cost) {
       state.market.forEach((card, index) => actions.push({ type: 'build', index, cardId: card.id, cardType: card.type, cost, buildBonus: buildCardReward(card.type) }));
     }
-    island.symbols.forEach(symbol => { if (SYMBOLS[symbol].basic) actions.push({ type: 'basic', symbol, cost: 0, reward: { resource: SYMBOLS[symbol].basic, amount: SYMBOLS[symbol].amount } }); });
     if (player.warehouse >= 4) actions.push({ type: 'convert', cost: 4, reward: { resource: 'fruit', amount: 1 } });
     state.market.forEach((card, index) => {
       const price = cardCost(card, island);
-      if (player.oil >= price) actions.push({ type: 'card', index, cardId: card.id, cardType: card.type, cost: price, reward: cardReward(card.type, X) });
+      const reward=cardReward(card.type,X);if (player.oil >= price+(reward.payment?.oil||0)&&player.warehouse>=(reward.payment?.warehouse||0)) actions.push({ type: 'card', index, cardId: card.id, cardType: card.type, cost: price, reward: cardReward(card.type, X) });
     });
     if(!island.exploration&&player.oil>=2)actions.push({type:'explore',cost:2,reward:{resource:'score',amount:2}});
     actions.push(...tileActions(state,player,island));
@@ -442,7 +427,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function legalSpells(state) {
     if (state.done || state.magicUsed || !['move', 'action', 'explore', 'plant'].includes(state.stage)) return [];
     const player = currentPlayer(state);
-    return Object.keys(SPELLS).filter(spell => player.spells[spell] && player.fruit >= SPELLS[spell].cost && (spell !== 'pause' || state.stage === 'move') && (spell !== 'harvest' || state.stage === 'plant')).map(spell => ({ type: 'spell', spell, cost: SPELLS[spell].cost }));
+    return Object.keys(SPELLS).filter(spell => player.spells[spell] && player.fruit + player.souvenirs >= SPELLS[spell].cost && (spell !== 'pause' || state.stage === 'move') && (spell !== 'harvest' || state.stage === 'plant')).map(spell => ({ type: 'spell', spell, cost: SPELLS[spell].cost }));
   }
   function previewMove(state, steps) {
     const player = currentPlayer(state);
@@ -454,7 +439,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const X = effectiveX(state, position, player.id);
       Object.assign(projected, waterResult(player, X));
       arrival = { kind: 'water', amount: X, player: player.id };
-    } else if (island.controller >= 0) arrival = { kind: 'visitor', amount: 2, player: island.controller };
+    }
     return { steps, cost: movementCost(player,steps), affordable: player.oil >= movementCost(player,steps), position, islandId: island.id, houses: island.houses.length, otherShips: otherShips(state, position, player.id), controller: island.controller, landing: arrival, player: projected, actions: actionList(state, projected, island) };
   }
   function finalBonus(state, playerIndex) {
@@ -466,7 +451,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       if (tile.houses.includes(player.id)) { islands.push(index); islandIds.push(tile.id); }
     });
     // Presence scores once per distinct island, independent of control or height.
-    return { player: player.id, islands, islandIds, islandCount: islands.length, points: state.rules.endgameBonus ? islands.length : 0, enabled: state.rules.endgameBonus };
+    return { player: player.id, islands, islandIds, islandCount: islands.length, souvenirPoints:player.souvenirs, points: (state.rules.endgameBonus ? islands.length : 0)+player.souvenirs, enabled: state.rules.endgameBonus };
   }
   function buildBonusMarginal(state, playerIndex, island) {
     compatible(state);
@@ -528,6 +513,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (state.done) fail('The game is over.');
     if (!action || typeof action.type !== 'string') fail('Choose an action.');
     const player = currentPlayer(state), island = islandOf(state);
+    if(action.type==='rent-build'){
+      if(state.stage!=='plant'||!state.rentBuildAvailable||player.built>=15||player.warehouse<buildCost(island,player.id))fail('Optional post-rent build is unavailable.');
+      const cost=buildCost(island,player.id);spendSeeds(player,cost);island.houses.push(player.id);island.controller=player.id;player.built++;player.stats.builds++;state.rentBuildAvailable=false;
+      record(state,'rent-build',player.name+' builds after renting for '+cost+' warehouse seeds, without using a die.',{cost,island:player.position});return state;
+    }
     if (action.type === 'sow') {
       if (!['move', 'action', 'explore', 'plant'].includes(state.stage)) fail('Plant only during your own turn.');
       sow(state, action.amount); return state;
@@ -535,10 +525,10 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (action.type === 'spell') {
       if (!legalSpells(state).some(a => a.spell === action.spell)) fail('This spell is not available now.');
       const spell = action.spell, cost = SPELLS[spell].cost;
-      player.fruit -= cost; player.warehouse += cost; player.spells[spell] = false;
+      const gifts=payFruit(player,cost,action.souvenirs);player.spells[spell] = false;
       state.magicUsed = true; player.stats.spells++;
       player.spellsCast[spell]=true;
-      record(state, 'spell', player.name + ' casts ' + SPELLS[spell].name + ' for ' + cost + ' fruit; the seeds return to their warehouse.', { spell, cost });
+      record(state, 'spell', player.name + ' casts ' + SPELLS[spell].name + ' for ' + (cost-gifts) + ' fruit and '+gifts+' souvenirs.', { spell, cost });
       if (spell === 'dig') { addOil(player, Math.max(0, 4 - player.oil)); addSeeds(player, Math.max(0, 4 - player.warehouse)); }
       else if (spell === 'pause') { state.stage = 'action'; record(state, 'pause', player.name + ' stays on island ' + (player.position + 1) + ' and skips all landing rewards.', { island: player.position }); }
       else if (spell === 'harvest') { player.score += 3; player.stats.scoreFromHarvest += 3; }
@@ -548,6 +538,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (action.type === 'move') {
       const chosen = legalMoves(state).find(move => move.steps === action.steps);
       if (!chosen) fail('That move is not available.');
+      const passed=state.players.filter(q=>q.id!==player.id&&((q.position-player.position+state.islands.length)%state.islands.length)>0&&((q.position-player.position+state.islands.length)%state.islands.length)<chosen.steps).length;
+      player.souvenirs+=passed;player.souvenirsGained+=passed;
+      if(passed)record(state,'souvenir',player.name+' gains '+passed+' souvenirs for overtaking ships.',{amount:passed});
       player.oil -= chosen.cost; player.stats.oilSpent += chosen.cost; player.position = chosen.position;
       record(state, 'move', player.name + ' moves ' + chosen.steps + ' step' + (chosen.steps === 1 ? '' : 's') + ' to island ' + (chosen.position + 1) + ', spending ' + chosen.cost + ' oil.', { steps: chosen.steps, cost: chosen.cost, island: chosen.position });
       landing(state); state.stage = 'action'; return state;
@@ -560,7 +553,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       if(action.type==='skip-explore'){state.explorationBonus=null;state.stage='plant';record(state,'skip-explore',player.name+' skips the optional exploration activation.');return state;}
       const bonus=legalActions(state).find(a=>a.type==='tile'&&action.type==='tile'&&a.index===action.index);
       if(!bonus)fail('Choose an available matching die and pay the exploration tile cost, or skip.');
-      activateTile(state,bonus);state.explorationBonus=null;state.stage='plant';return state;
+      activateTile(state,bonus,action.souvenirs);state.explorationBonus=null;state.stage='plant';return state;
     }
     if (state.stage !== 'action') fail('Move before taking a main action.');
     const legal = legalActions(state).find(candidate => candidate.type === action.type && (!['card', 'build', 'tile'].includes(action.type) || candidate.index === action.index) && (action.type !== 'basic' || candidate.symbol === action.symbol));
@@ -570,7 +563,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       island.exploration={id:state.exploreDeck.pop(),claimedBy:null};state.explorationBonus={player:player.id,island:player.position};state.mainActionType='explore';state.stage='explore';
       record(state,'explore',player.name+' explores island '+(player.position+1)+' for 2 oil and 2 points: '+EXPLORE_TILES[island.exploration.id].name+'.',{island:player.position,tile:island.exploration.id,cost:2,amount:2});return state;
     }else if(action.type==='tile'){
-      activateTile(state,legal);player.stats.rents++;
+      activateTile(state,legal,action.souvenirs);player.stats.rents++;
     }else if (action.type === 'build') {
       spendSeeds(player, legal.cost); island.houses.push(player.id); island.controller = player.id; player.built++; player.stats.builds++;
       record(state, 'build', player.name + ' builds house ' + island.houses.length + ' on island ' + (player.position + 1) + ' for ' + legal.cost + ' seeds and takes control.', { island: player.position, houses: island.houses.length, cost: legal.cost });
@@ -580,6 +573,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
         if (bonus.resource === 'water') giveWater(state, player.id, bonus.amount, 'build-card');
         else if (bonus.resource === 'oil') addOil(player, bonus.amount);
         else if (bonus.resource === 'warehouse') addSeeds(player, bonus.amount);
+        else if(bonus.resource==='sprouts'){player.sprouts+=bonus.amount;player.stats.seedsGained+=bonus.amount;}
         else { player.score += bonus.amount; player.stats.scoreFromCards += bonus.amount; }
         useDie(state,legal.index,'build');
       }
@@ -596,12 +590,16 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       record(state, 'basic', player.name + ' uses the island basic effect: +' + amount + ' ' + (resource === 'warehouse' ? 'warehouse seeds' : resource) + '.', { symbol: action.symbol, resource, amount });
     } else if (action.type === 'card') {
       const card = state.market[action.index], reward = legal.reward;
+      if(reward.payment?.warehouse)spendSeeds(player,reward.payment.warehouse);
+      if(reward.payment?.oil){player.oil-=reward.payment.oil;player.stats.oilSpent+=reward.payment.oil;}
       player.oil -= legal.cost; player.stats.oilSpent += legal.cost; 
       player.stats.rents++; player.stats.cards++;
-      record(state, 'card', player.name + ' uses T' + card.type + ' (' + CARDS[card.type].name + '): +' + reward.amount + ' ' + reward.resource + (reward.water ? ' and +' + reward.water + ' water' : '') + (reward.seeds ? ' and +' + reward.seeds + ' warehouse seeds' : '') + (legal.cost ? ' (2 oil).' : ' (free).'), { cardType: card.type, cardId: card.id, cost: legal.cost, resource: reward.resource, amount: reward.amount, water: reward.water || 0, seeds: reward.seeds || 0, houses: island.houses.length, otherShips: otherShips(state, player.position, player.id) });
+      record(state, 'card', player.name + ' uses T' + card.type + ' (' + CARDS[card.type].name + '): +' + reward.amount + ' ' + reward.resource + (reward.water ? ' and +' + reward.water + ' water' : '') + (reward.seeds ? ' and +' + reward.seeds + ' warehouse seeds' : '') + (legal.cost ? ' (2 oil).' : ' (free).'), { cardType: card.type, cardId: card.id, cost: legal.cost, payment:reward.payment||{}, resource: reward.resource, amount: reward.amount, water: reward.water || 0, seeds: reward.seeds || 0, houses: island.houses.length, otherShips: otherShips(state, player.position, player.id) });
       if (reward.resource === 'water') giveWater(state, player.id, reward.amount, 'card');
       else if (reward.resource === 'oil') addOil(player, reward.amount);
       else if (reward.resource === 'warehouse') addSeeds(player, reward.amount);
+      else if(reward.resource==='souvenirs'){player.souvenirs+=reward.amount;player.souvenirsGained+=reward.amount;}
+      else if(reward.resource==='sprouts'){player.sprouts+=reward.amount;player.stats.seedsGained+=reward.amount;}
       else { player.score += reward.amount; player.stats.scoreFromCards += reward.amount; }
       if (reward.water) giveWater(state, player.id, reward.water, 'card');
       if (reward.seeds) addSeeds(player, reward.seeds);
@@ -609,6 +607,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     } else {
       player.stats.passes++; record(state, 'pass', player.name + ' skips the main action.');
     }
+    state.rentBuildAvailable=['basic','card','tile'].includes(action.type);
     state.mainActionType=action.type;
     state.stage = 'plant';
     return state;
@@ -621,6 +620,8 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (!reward) return -2;
     if (reward.water) return rewardValue(player, { resource: reward.resource, amount: reward.amount }, round) + rewardValue(player, { resource: 'water', amount: reward.water }, round);
     if (reward.seeds) return rewardValue(player, { resource: reward.resource, amount: reward.amount }, round) + rewardValue(player, { resource: 'warehouse', amount: reward.seeds }, round);
+    if(reward.resource==='souvenirs')return reward.amount*1.9;
+    if(reward.resource==='sprouts')return reward.amount*2;
     if (reward.resource === 'fruit') return reward.amount * (player.fruit < 4 ? 3 : 1.5);
     if (reward.resource === 'score') return reward.amount * (round >= 14 ? 3 : 1.9);
     if (reward.resource === 'warehouse') return reward.amount * (player.warehouse < 4 ? 5 : player.warehouse < 6 ? 3.3 : player.warehouse < 10 ? 1.5 : 0.6);
@@ -636,7 +637,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if(['card','build','tile'].includes(action.type)){
       const die=state.market[action.index];
       if((die.uses||0)===0)value+=rewardValue(player,{resource:'warehouse',amount:1},state.round);
-      else if(die.lastUser!==null&&die.lastUser!==undefined&&die.lastUser!==player.id){const owner=state.players[die.lastUser];value-=waterResult(owner,1).used*.65;}
+      else if(die.lastUser!==null&&die.lastUser!==undefined&&die.lastUser!==player.id){const owner=state.players[die.lastUser];value-=waterResult(owner,2).used*.65;}
     }
     return value;
   }
@@ -650,7 +651,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const bonus = state.rules.endgameBonus && state.rules.bonusAware ? buildBonusMarginal(state, player.id, island) * (state.round >= 14 ? 3 : 1.9) : 0;
       return (action.buildBonus ? rewardValue(player, action.buildBonus, state.round) : 0) + (island.controller === player.id ? 0.5 : 2.3) + Math.min(island.houses.length, 6) * 0.18 - action.cost * 0.2 + bonus;
     }
-    return rewardValue(player, action.reward, state.round) - action.cost * (player.oil <= 3 ? 1.4 : 0.7);
+    return rewardValue(player, action.reward, state.round)-(action.reward?.payment?.warehouse||0)*.8-(action.reward?.payment?.oil||0)*.7 - action.cost * (player.oil <= 3 ? 1.4 : 0.7);
   }
   function bestAction(state,player,island,actions,intent){
     const points=a=>(a.reward?.resource==='score'?a.reward.amount:0)+(a.buildBonus?.resource==='score'?a.buildBonus.amount:0);
@@ -763,6 +764,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const best=options.sort((a,b)=>actionValue(state,player,islandOf(state),b)-actionValue(state,player,islandOf(state),a))[0];
       applyAction(state,best&&actionValue(state,player,islandOf(state),best)>0?best:{type:'skip-explore'});
     }
+    if(state.stage==='plant'&&state.rentBuildAvailable&&player.built<15&&player.warehouse>=buildCost(islandOf(state),player.id))applyAction(state,{type:'rent-build'});
     if (state.stage === 'plant') {
       if (availableSpell(state, 'harvest')) applyAction(state, { type: 'spell', spell: 'harvest' });
       else if (availableSpell(state, 'rest') && !player.spells.harvest && (!state.clockTriggered || state.round < state.totalRounds)) applyAction(state, { type: 'spell', spell: 'rest' });
@@ -790,6 +792,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       for (const key of ['warehouse', 'field', 'sprouts', 'fruit', 'oil', 'score', 'built', 'turns']) if (!integer(player[key])) fail('Invalid ' + key + ' for player ' + index + '.');
       const placed = state.islands.reduce((sum, island) => sum + island.houses.filter(owner => owner === index).length, 0);
       if(!player.upgrades||['boat','garden','bank'].some(k=>typeof player.upgrades[k]!=='boolean'))fail('Invalid permanent upgrades.');
+      if(!integer(player.souvenirs)||player.souvenirs!==player.souvenirsGained-player.souvenirsSpent)fail('Souvenir conservation failed.');
       if (player.built !== placed || placed > 15) fail('Player supply or turn count failed.');
       if (player.warehouse + player.field + player.sprouts + player.fruit !== (player.initialSeeds ?? 8) + player.stats.seedsGained - player.stats.seedsSpent) fail('Seed conservation failed.');
       if (!integer(player.stats.conversions)) fail('Invalid conversion count.');
@@ -813,7 +816,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if (state.done && (!state.players.every(p => p.turns === state.totalRounds) || state.stage !== 'done')) fail('Game ended before equal turns.');
     return true;
   }
-  return { EXPLORE_TILES, movementCost, tileReward, createGame, newGame: createGame, currentPlayer, applyAction, legalMoves, legalActions, legalSpells, previewMove, cardReward, cardCost, buildCost, otherShips, effectiveX, buildCardReward, waterResult, giveWater, finalBonus, buildBonusMarginal, runBotTurn, validateState, clone, SYMBOLS, CARDS, SPELLS, COLORS, MAP_SETS, SAVE_VERSION, MOVE_COST };
+  return { FREE_TRAVEL, EXPLORE_TILES, movementCost, tileReward, createGame, newGame: createGame, currentPlayer, applyAction, legalMoves, legalActions, legalSpells, previewMove, cardReward, cardCost, buildCost, otherShips, effectiveX, buildCardReward, waterResult, giveWater, finalBonus, buildBonusMarginal, runBotTurn, validateState, clone, SYMBOLS, CARDS, SPELLS, COLORS, MAP_SETS, SAVE_VERSION, MOVE_COST };
 });
 
 
@@ -825,7 +828,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   const G = window.IslandGame;
   const $ = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const STORAGE = 'island-circuit-match-v26';
+  const STORAGE = 'island-circuit-match-v27';
   const roles = { human: 'Human captain', build80: 'Build 80%', spread7score: 'Spread 7 → Score', rent80: 'Rent 80%', score80: 'Score 80%', spreadscore: 'Spread → Score', build9rent9: 'Build 9 → Rent 9' };
   const spellNames = { dig: 'Dig', pause: 'Pause', harvest: 'Harvest', rest: 'Rest' };
   const spellDetails = { dig: 'Refill oil and warehouse seeds to 4', pause: 'Stay here; skip landing rewards', harvest: '+3 score after your main action', rest: 'Refresh all four spells' };
@@ -837,7 +840,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function defaultConfig() { return { seed: 'island-circuit', players: [{ name: 'You', type: 'human' }, { name: 'Explorer', type: 'spread7score' }, { name: 'Traveller', type: 'rent80' }, { name: 'Scorer', type: 'score80' }] }; }
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE));
-    if (stored && stored.version === 26 && stored.state?.version === 26 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
+    if (stored && stored.version === 27 && stored.state?.version === 27 && Array.isArray(stored.state.players) && stored.state.players.length >= 2 && stored.state.players.length <= 4 && Array.isArray(stored.state.islands) && stored.state.islands.length === G.MAP_SETS[stored.state.players.length].length && stored.state.rules?.endgameBonus === true && stored.state.rules?.bonusAware === true && Array.isArray(stored.state.log)) { G.validateState(stored.state); saved = stored.state; }
   } catch (_) { /* A private browsing session can still play without persistence. */ }
   state = G.createGame(defaultConfig());
   function active() { return G.currentPlayer(state); }
@@ -851,7 +854,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function save() {
     if (!started) return;
-    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 26, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
+    try { localStorage.setItem(STORAGE, JSON.stringify({ version: 27, state })); saved = JSON.parse(JSON.stringify(state)); $('#save-status').textContent = 'Saved on this device'; }
     catch (_) { $('#save-status').textContent = 'Autosave unavailable · export to keep'; }
   }
   function notice(message) {
@@ -886,9 +889,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     $('#players').style.setProperty('--count', state.players.length);
     $('#players').innerHTML = state.players.map((p, i) => {
       const bonus = state.done ? p.endgame : G.finalBonus(state, p.id);
-      const bonusText = state.done ? `${p.ordinaryScoreAtEnd} ordinary + ${bonus.points} coverage` : `Coverage: ${bonus.islandCount} ${bonus.islandCount === 1 ? 'island' : 'islands'} · +${bonus.points} final`;
+      const bonusText = state.done ? `${p.ordinaryScoreAtEnd} ordinary + ${bonus.islandCount} coverage + ${p.souvenirs} souvenirs` : `Coverage: ${bonus.islandCount} ${bonus.islandCount === 1 ? 'island' : 'islands'} · +${bonus.points} final`;
       const bonusDetail = bonus.islandCount ? `Islands ${bonus.islands.map(index => index + 1).join(', ')} · one point per island · control not required` : 'No islands with your houses yet';
-      return `<article class="player-card${!state.done && i === state.current ? ' active' : ''}" style="--player:${p.color}"><div class="player-name"><span class="player-dot"></span>${esc(p.name)}</div><div class="player-role">${roles[p.type]}${state.firstPlayer === i ? ' · First' : ''}${phaseNote(p) ? `<br>${phaseNote(p)}` : ''}</div><div class="player-score">${p.score}<small>${state.done ? 'total points' : 'points'}</small></div><div class="player-bonus" title="${esc(bonusDetail)}">${bonusText}</div><div class="player-resources"><span>Oil <b>${p.oil}</b></span><span>Warehouse <b>${p.warehouse}</b></span><span>Fruit <b>${p.fruit}</b></span><span>Built <b>${p.built}/15</b></span></div><div class="player-upgrades">${Object.entries(p.upgrades).filter(([,owned])=>owned).map(([k])=>({boat:'Efficient Boat',garden:'Garden Tools',bank:'Seed Dividend'}[k])).join(' · ')}</div><div class="growth-summary"><span>Field ${p.field}</span><span>Sprouts ${p.sprouts}</span><span>Fruit ${p.fruit}</span></div></article>`;
+      return `<article class="player-card${!state.done && i === state.current ? ' active' : ''}" style="--player:${p.color}"><div class="player-name"><span class="player-dot"></span>${esc(p.name)}</div><div class="player-role">${roles[p.type]}${state.firstPlayer === i ? ' · First' : ''}${phaseNote(p) ? `<br>${phaseNote(p)}` : ''}</div><div class="player-score">${p.score}<small>${state.done ? 'total points' : 'points'}</small></div><div class="player-bonus" title="${esc(bonusDetail)}">${bonusText}</div><div class="player-resources"><span>Oil <b>${p.oil}</b></span><span>Warehouse <b>${p.warehouse}</b></span><span>Fruit <b>${p.fruit}</b></span><span>Souvenirs <b>${p.souvenirs}</b></span><span>Built <b>${p.built}/15</b></span></div><div class="player-upgrades">${Object.entries(p.upgrades).filter(([,owned])=>owned).map(([k])=>({boat:'Efficient Boat',garden:'Garden Tools',bank:'Seed Dividend'}[k])).join(' · ')}</div><div class="growth-summary"><span>Field ${p.field}</span><span>Sprouts ${p.sprouts}</span><span>Fruit ${p.fruit}</span></div></article>`;
     }).join('');
     $('#turn-count').textContent = state.done ? 'Final scores' : `${state.players.length} captains`;
   }
@@ -897,10 +900,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   }
   function dieTrackText(die){
     const next=die.uses+1;
-    const gift=die.uses===0?'+1 warehouse seed to you':die.lastUser===active().id?'same user: no water':'+1 water to '+state.players[die.lastUser].name;
+    const gift=die.uses===0?'+1 warehouse seed to you':die.lastUser===active().id?'same user: no water':'+2 water to '+state.players[die.lastUser].name;
     return 'Use '+next+'/3 · '+gift+(next===3?' · then reroll':'');
   }
   function dieTrackMarkup(die){return '<div class="die-track" aria-label="'+esc(die.id+'; '+dieTrackText(die))+'">'+[0,1,2].map(i=>'<span class="'+(i<die.uses?'used':i===die.uses?'next':'')+'">'+(i+1)+'</span>').join('')+'</div><div class="die-history">Last: '+(die.lastUser===null?'—':esc(state.players[die.lastUser].name))+'<br>'+esc(dieTrackText(die))+'</div>';}
+  function souvenirChoice(explicit){if(explicit!==undefined)return Number(explicit);const input=$('#souvenir-payment');return input&&input.value!==''?Number(input.value):undefined;}
   function tileCostText(cost){return Object.entries(cost).map(([r,n])=>n+' '+(r==='warehouse'?'warehouse seeds':r)).join(' + ');}
   function tilePanel(island){
     if(!island.exploration)return '<p class="muted">Unknown tile · Explore for 2 oil and 2 ordinary points.</p>';
@@ -912,9 +916,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   function renderExplorations(){
     $('#explorations').innerHTML=state.islands.map((island,i)=>'<details class="discovery-row"><summary>Island '+(i+1)+' · '+(island.exploration?esc(G.EXPLORE_TILES[island.exploration.id].name):'Unexplored ?')+'</summary>'+tilePanel(island)+'</details>').join('');
   }
-  function islandLabels(island) {
-    return island.symbols.map(s => G.SYMBOLS[s].basic ? '+' + G.SYMBOLS[s].amount + ' ' + (s === 'A' ? 'point' : s === 'B' ? 'seeds' : 'water') : 'Free ' + ({D:'T1/T6',E:'T2/T3',F:'T4/T5'}[s]));
-  }
+  function islandLabels(island){return ['Free '+island.symbols.join('/')];}
   function renderBoard() {
     const moves = new Map((humanTurn() ? G.legalMoves(state) : []).map(m => [m.position, m]));
     $('#board').setAttribute('aria-label', `${state.islands.length} islands, clockwise route`);
@@ -934,11 +936,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const legal = new Set(humanTurn() ? G.legalActions(state).filter(a=>a.type==='card').map(a=>a.index) : []);
     $('#market-caption').textContent = previewIsland !== null ? `Preview: Island ${previewIsland+1} · X ${X} (${island.houses.length} houses + ${visitors} other ships)` : 'Three independent tracks · 1 → 2 → 3';
     $('#market').innerHTML = state.market.map((card,index)=>{
-      const def=G.CARDS[card.type], reward=G.cardReward(card.type,X), cost=island.symbols.includes(def.symbol)?0:2;
+      const def=G.CARDS[card.type], reward=G.cardReward(card.type,X), cost=G.cardCost(card,island);
       const playable=legal.has(index), unit=reward.resource==='score'?'points':reward.resource==='warehouse'?'seeds':reward.resource;
-      const price=cost===0?'Free on this island':'2 oil';
-      const extra = reward.seeds ? ` and ${reward.seeds} fixed warehouse seeds` : reward.water ? ` and ${reward.water} fixed water` : '';
-      return `<button class="travel-card${playable?' playable':''}" data-card="${index}" ${playable?'':'disabled'} aria-label="${esc(card.id)} T${card.type} ${esc(def.name)}, gain ${reward.amount} ${unit}${extra}, ${price}"><div class="travel-top"><span class="travel-kind">${esc(card.id)} · ${reward.seeds?'Score + seeds':reward.water?'Score + water':reward.resource==='score'?'Excursion':reward.resource==='oil'?'Oil stop':reward.resource==='warehouse'?'Seed stop':'Freshwater'}</span><span class="travel-symbol" title="${esc(card.id)} · T${card.type}">T${card.type}</span></div><div class="travel-reward-group"><div class="travel-reward">+${reward.amount}<small>${unit}</small></div>${reward.seeds?`<div class="travel-extra">+${reward.seeds} seeds · fixed</div>`:reward.water?`<div class="travel-extra">+${reward.water} water · fixed</div>`:''}</div><div>${dieTrackMarkup(card)}<div class="travel-price${cost===0?' free':active().oil<cost?' unaffordable':''}">${price}</div><div class="travel-formula">${def.base} + X${reward.seeds?' points<br>+2 seeds, fixed':reward.water?' points<br>+2 water, fixed':''}</div></div></button>`;
+      const trade=reward.payment?Object.entries(reward.payment).map(([r,n])=>n+' '+(r==='warehouse'?'warehouse seeds':r)).join(' + '):'';const price=(cost===0?'Free access':'2 oil access')+(trade?' · pay '+trade:'');
+      const extra = reward.seeds ? ` and ${reward.seeds} warehouse seeds` : reward.water ? ` and ${reward.water} fixed water` : '';
+      return `<button class="travel-card${playable?' playable':''}" data-card="${index}" ${playable?'':'disabled'} aria-label="${esc(card.id)} T${card.type} ${esc(def.name)}, gain ${reward.amount} ${unit}${extra}, ${price}"><div class="travel-top"><span class="travel-kind">${esc(card.id)} · ${reward.seeds?'Oil + seeds':reward.water?'Score + water':reward.resource==='souvenirs'?'Souvenir exchange':reward.resource==='sprouts'?'Sprout nursery':reward.resource==='score'?'Excursion':reward.resource==='oil'?'Oil stop':reward.resource==='warehouse'?'Seed stop':'Freshwater'}</span><span class="travel-symbol" title="${esc(card.id)} · T${card.type}">T${card.type}</span></div><div class="travel-reward-group"><div class="travel-reward">+${reward.amount}<small>${unit}</small></div>${reward.seeds?`<div class="travel-extra">+${reward.seeds} seeds</div>`:reward.water?`<div class="travel-extra">+${reward.water} water · fixed</div>`:''}</div><div>${dieTrackMarkup(card)}<div class="travel-price${cost===0?' free':active().oil<cost?' unaffordable':''}">${price}</div><div class="travel-formula">${({1:'3 + 3X oil',2:'2 + 2X seeds',3:'Pay X seeds → X souvenirs',4:'1 + X oil AND seeds',5:'1 + X sprouts',6:'Pay X oil → X souvenirs'})[card.type]}</div></div></button>`;
     }).join('') || '<p class="journal-empty">No travel die available. Use a basic effect, build, or pass.</p>';
   }
   function phases() { return `<div class="phase-track">${['move','action','plant'].map((s,i)=>`<span class="${state.stage===s?'on':''}">${i+1} ${['Move','Build / Rent','Plant'][i]}</span>`).join('')}</div>`; }
@@ -946,7 +948,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const p=active(), island=state.islands[p.position], X=G.effectiveX(state, p.position, p.id), visitors=G.otherShips(state, p.position, p.id);
     if (state.done) {
       const winners=state.winners.map(id=>state.players[id].name);
-      $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Final result</div><h2 class="result-heading">${esc(winners.join(' & '))} ${winners.length>1||winners[0]==='You'?'win':'wins'}.</h2><p class="result-note">Every distinct island with your colour adds 1 final point; control is not required.</p>${state.players.slice().sort((a,b)=>b.score-a.score).map(q=>`<div class="result-row"><div><span class="player-name" style="--player:${q.color}"><span class="player-dot"></span>${esc(q.name)}</span><div class="result-breakdown">${q.ordinaryScoreAtEnd} ordinary + ${q.endgame.points} coverage</div><div class="result-stats">${q.endgame.islandCount ? `${q.endgame.islandCount} ${q.endgame.islandCount === 1 ? 'island' : 'islands'}: ${q.endgame.islands.map(index => index + 1).join(', ')}` : 'No islands with own houses'}<br>${q.stats.builds} builds · ${q.stats.rents} rents · ${q.stats.explorations} explorations<br>${q.stats.waterUsed}/${q.stats.waterGained} water used</div></div><strong>${q.score}<small>total</small></strong></div>`).join('')}<button class="text-button" data-export-csv>Download turn choices CSV ↓</button><button class="primary end-turn" data-new-match>Play another voyage →</button>`;
+      $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Final result</div><h2 class="result-heading">${esc(winners.join(' & '))} ${winners.length>1||winners[0]==='You'?'win':'wins'}.</h2><p class="result-note">Every distinct island with your colour adds 1 point, plus 1 per unspent souvenir.</p>${state.players.slice().sort((a,b)=>b.score-a.score).map(q=>`<div class="result-row"><div><span class="player-name" style="--player:${q.color}"><span class="player-dot"></span>${esc(q.name)}</span><div class="result-breakdown">${q.ordinaryScoreAtEnd} ordinary + ${q.endgame.islandCount} coverage + ${q.souvenirs} souvenirs</div><div class="result-stats">${q.endgame.islandCount ? `${q.endgame.islandCount} ${q.endgame.islandCount === 1 ? 'island' : 'islands'}: ${q.endgame.islands.map(index => index + 1).join(', ')}` : 'No islands with own houses'}<br>${q.stats.builds} builds · ${q.stats.rents} rents · ${q.stats.explorations} explorations<br>${q.stats.waterUsed}/${q.stats.waterGained} water used</div></div><strong>${q.score}<small>total</small></strong></div>`).join('')}<button class="text-button" data-export-csv>Download turn choices CSV ↓</button><button class="primary end-turn" data-new-match>Play another voyage →</button>`;
       return;
     }
     if (!humanTurn()) {
@@ -957,22 +959,22 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if(state.stage==='move') {
       body=`<h2>Where will you sail?</h2><p class="turn-description">Choose a step count, or select a highlighted island. Landing rewards resolve immediately.</p>${[1,2,3].map(steps=>{
         const m=G.legalMoves(state).find(x=>x.steps===steps), cost=G.movementCost(p,steps), target=(p.position+steps)%state.islands.length;
-        const d=state.islands[target], landing=d.controller===p.id?`Own island · +${G.effectiveX(state,target,p.id)} water`:d.controller<0?'Unclaimed island':`${state.players[d.controller].name} gets 2 seeds`;
+        const d=state.islands[target], landing=d.controller===p.id?`Own island · +${G.effectiveX(state,target,p.id)} water`:'Other players gain 2 water per own house or ship here';
         return `<button class="move-option" data-move="${steps}" ${m?'':'disabled'}><span><strong>${steps} ${steps===1?'step':'steps'} → Island ${target+1}</strong><small>${esc(landing)}</small></span><span class="move-price">${cost===0?'Free':cost+' oil'}</span></button>`;
       }).join('')}`;
     } else if(state.stage==='explore') {
       body='<h2>Island discovered.</h2><p class="turn-description">You gained 2 ordinary points. You may activate the revealed tile once now, paying its cost and spending an exact matching die. This optional effect does not grant another main action.</p><div class="explore-panel">'+tilePanel(island)+tileButtons()+'</div><button class="text-button" data-skip-explore>Skip activation →</button>';
     } else if(state.stage==='action') {
       const actions=G.legalActions(state), build=actions.find(a=>a.type==='build'), cost=G.buildCost(island,p.id), newIsland=!island.houses.includes(p.id);
-      const buildCards=state.market.map((card,index)=>{const bonus=G.buildCardReward(card.type), unit={oil:'oil',warehouse:'warehouse seed',score:'point',water:'water'}[bonus.resource];return `<button class="text-button build-card-option" data-build-card="${index}" ${build?'':'disabled'}>Build with T${card.type} · ${esc(card.id)} · +${bonus.amount} ${unit}${bonus.amount===1?'':'s'}<small>${esc(dieTrackText(card))}</small></button>`;}).join('');
+      const buildCards=state.market.map((card,index)=>{const bonus=G.buildCardReward(card.type), unit={oil:'oil',warehouse:'warehouse seed',score:'point',water:'water',sprouts:'sprout'}[bonus.resource];return `<button class="text-button build-card-option" data-build-card="${index}" ${build?'':'disabled'}>Build with T${card.type} · ${esc(card.id)} · +${bonus.amount} ${unit}${bonus.amount===1?'':'s'}<small>${esc(dieTrackText(card))}</small></button>`;}).join('');
       const explorationControls=island.exploration?'<div class="explore-panel">'+tilePanel(island)+tileButtons()+'</div>':'<button class="quiet exploration-button" data-explore '+(p.oil>=2?'':'disabled')+'>Explore · pay 2 oil, gain 2 points<br><small>Reveal this island’s unknown tile; optional immediate activation</small></button>';
-      body=`<h2>Choose your main action.</h2><p class="turn-description">Island ${p.position+1} · X ${X} (${island.houses.length} houses + ${visitors} other ships). Each other ship adds 1 to house-based rewards.</p><div class="build-button"><strong>Build house ${island.houses.length+1} · ${cost} seeds</strong><p class="turn-description">Choose one die below to build and take control. No construction water.<br>${newIsland?'First own house here: +1 final point':'Island already counts: no extra final point'}</p></div>${explorationControls}${buildCards?`<p class="turn-description">Building must use one die. Pay the full seed cost, take its building reward, then resolve its use track:</p><div class="build-card-options">${buildCards}</div>`:''}<p class="turn-description">Or use one available travel die.</p>${island.symbols.some(s=>G.SYMBOLS[s].basic)?`<div class="basic-row">${island.symbols.filter(s=>G.SYMBOLS[s].basic).map(s=>`<button class="basic-button" data-basic="${s}">+${G.SYMBOLS[s].amount} ${s==='A'?'point':s==='B'?'warehouse seeds':'water'}</button>`).join('')}</div>`:'<p class="muted">This island has no basic resource effect.</p>'}<button class="text-button conversion-button" data-convert ${p.warehouse>=4?'':'disabled'}>Convert 4 warehouse seeds → 1 fruit · main action</button><button class="text-button pass-button" data-pass>Pass main action →</button>`;
+      body=`<h2>Choose your main action.</h2><p class="turn-description">Island ${p.position+1} · X ${X} (${island.houses.length} houses + ${visitors} other ships). Each other ship adds 1 to house-based rewards.</p><div class="build-button"><strong>Build house ${island.houses.length+1} · ${cost} seeds</strong><p class="turn-description">Choose one die below to build and take control. No construction water.<br>${newIsland?'First own house here: +1 final point':'Island already counts: no extra final point'}</p></div>${explorationControls}${buildCards?`<p class="turn-description">Building must use one die. Pay the full seed cost, take its building reward, then resolve its use track:</p><div class="build-card-options">${buildCards}</div>`:''}<p class="turn-description">Or use one available travel die.</p><button class="text-button conversion-button" data-convert ${p.warehouse>=4?'':'disabled'}>Convert 4 warehouse seeds → 1 fruit · main action</button><button class="text-button pass-button" data-pass>Pass main action →</button>`;
     } else {
       plantAmount=Math.min(Math.max(0,plantAmount),p.warehouse);
-      body=`<h2>Prepare your next harvest.</h2><p class="turn-description">Planting commits warehouse seeds to the field. Keep some back if you want to build.</p><label class="plant-label" for="plant-number">Seeds to plant<input id="plant-number" class="plant-number" type="number" min="0" max="${p.warehouse}" value="${plantAmount}"></label><input id="plant-range" class="plant-range" type="range" min="0" max="${p.warehouse}" value="${plantAmount}" aria-label="Seeds to plant"><div class="plant-shortcuts"><button class="text-button" data-plant-preset="0">Keep all</button><button class="text-button" data-plant-preset="${p.warehouse}">Plant all ${p.warehouse}</button></div><div id="plant-preview" class="plant-preview"></div><button class="primary end-turn" data-end-turn>Plant & end turn →</button>`;
+      body=`<h2>Prepare your next harvest.</h2>${state.rentBuildAvailable?`<button class="quiet" data-rent-build ${p.built<15&&p.warehouse>=G.buildCost(island,p.id)?'':'disabled'}>Build after rent · ${G.buildCost(island,p.id)} seeds · no die</button>`:''}<p class="turn-description">Planting commits warehouse seeds to the field. Keep some back if you want to build.</p><label class="plant-label" for="plant-number">Seeds to plant<input id="plant-number" class="plant-number" type="number" min="0" max="${p.warehouse}" value="${plantAmount}"></label><input id="plant-range" class="plant-range" type="range" min="0" max="${p.warehouse}" value="${plantAmount}" aria-label="Seeds to plant"><div class="plant-shortcuts"><button class="text-button" data-plant-preset="0">Keep all</button><button class="text-button" data-plant-preset="${p.warehouse}">Plant all ${p.warehouse}</button></div><div id="plant-preview" class="plant-preview"></div><button class="primary end-turn" data-end-turn>Plant & end turn →</button>`;
     }
     const sowNow=['move','action','explore'].includes(state.stage) ? `<div class="free-sow"><label for="sow-number">Plant now · free action</label><div class="free-sow-row"><input id="sow-number" type="number" min="1" max="${p.warehouse}" value="1" ${p.warehouse?'':'disabled'} aria-label="Warehouse seeds to plant now"><button class="text-button" data-sow ${p.warehouse?'':'disabled'}>Plant seeds</button></div><small>Use between complete effects. Seeds cannot return to the warehouse.</small></div>` : '';
-    $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Your turn</div>${phases()}${sowNow}${body}`;
+    $('#turn-controls').innerHTML=`<div class="turn-eyebrow">Your turn</div>${phases()}${p.souvenirs?`<label class="turn-description">Souvenirs to use for the next fruit payment<input id="souvenir-payment" type="number" min="0" max="${p.souvenirs}" placeholder="Auto: fruit first" aria-label="Souvenirs used instead of fruit"></label>`:''}${sowNow}${body}`;
     updatePlantPreview();
   }
   function updatePlantPreview() {
@@ -984,10 +986,11 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     const p=active(), legal=new Set(humanTurn()?G.legalSpells(state).map(a=>a.spell):[]);
     $('#magic-status').textContent=state.done?'Voyage complete':state.magicUsed?'Used this turn':'One per turn';
     $('#magic').innerHTML=Object.entries(G.SPELLS).map(([key,spell])=>{
-      const status=!p.spells[key]?'Used · Rest to refresh':state.magicUsed?'Already used a spell this turn':p.fruit<spell.cost?`Need ${spell.cost-p.fruit} more fruit`:key==='pause'&&state.stage!=='move'?'Before movement only':key==='harvest'&&state.stage!=='plant'?'After main action only':spellDetails[key];
+      const status=!p.spells[key]?'Used · Rest to refresh':state.magicUsed?'Already used a spell this turn':p.fruit+p.souvenirs<spell.cost?`Need ${spell.cost-p.fruit} more fruit`:key==='pause'&&state.stage!=='move'?'Before movement only':key==='harvest'&&state.stage!=='plant'?'After main action only':spellDetails[key];
       return `<button class="magic-button" data-spell="${key}" ${legal.has(key)?'':'disabled'}><span><strong>${spellNames[key]} <span class="muted">${spell.zh}</span></strong><small>${esc(status)}</small></span><span class="magic-cost">${spell.cost} fruit</span></button>`;
     }).join('');
   }
+  function renderSouvenirSpells(){if(!humanTurn())return;$('#magic').innerHTML+=G.legalSpells(state).filter(a=>active().souvenirs>=a.cost).map(a=>'<button class="quiet" data-spell="'+a.spell+'" data-souvenirs="'+a.cost+'">'+spellNames[a.spell]+' · pay '+a.cost+' souvenirs</button>').join('');}
   function renderJournal() {
     const logs=state.log.filter(e=>!['draw','market','turn','start'].includes(e.type)).slice(-25).reverse();
     $('#journal').innerHTML=logs.length?logs.map(e=>`<div class="journal-entry"><span class="player-dot" style="--player:${playerColor(e.player)}"></span><span class="log-message">${esc(e.message)}</span></div>`).join(''):'<p class="journal-empty">Your voyage begins with the first move. Builds, rents, magic and water use will appear here.</p>';
@@ -999,13 +1002,13 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     $('#table-subtitle').textContent=state.done?'In-game points + 1 point per island with your colour.':`Clockwise route · ${state.islands.reduce((n,i)=>n+i.houses.length,0)} houses across ${state.islands.length} islands`;
     $('#next-bot').disabled=!started||state.done||active().type==='human'||$('#auto-bots').checked;
     $('#export-game').disabled=!started;
-    renderPlayers();renderBoard();renderMarket();renderControls();renderMagic();renderJournal();
+    renderPlayers();renderBoard();renderMarket();renderControls();renderMagic();renderSouvenirSpells();renderJournal();
   }
   function renderOpponents() {
     $('#captain-type').value=captainTypes[0];
     $('#opponent-setup').innerHTML=Array.from({length:count-1},(_,i)=>{const seat=i+1;return `<div class="crew-setup-row"><div class="captain-number">0${seat+1}</div><div><label class="sr-only" for="captain-name-${seat}">Captain ${seat+1} name</label><input id="captain-name-${seat}" data-captain-name="${seat}" maxlength="24" value="${esc(captainNames[seat])}" placeholder="Captain ${seat+1}" aria-label="Captain ${seat+1} name"></div><label class="sr-only" for="opponent-${i}">Captain ${seat+1} type</label><select id="opponent-${i}" data-opponent="${i}" aria-label="Captain ${seat+1} type"><option value="human"${captainTypes[seat]==='human'?' selected':''}>Human player</option><option value="build80"${captainTypes[seat]==='build80'?' selected':''}>Build 80%</option><option value="rent80"${captainTypes[seat]==='rent80'?' selected':''}>Rent 80%</option><option value="score80"${captainTypes[seat]==='score80'?' selected':''}>Score 80%</option><option value="spread7score"${captainTypes[seat]==='spread7score'?' selected':''}>Spread 7 → Score</option><option value="spreadscore"${captainTypes[seat]==='spreadscore'?' selected':''}>Spread → Score</option><option value="build9rent9"${captainTypes[seat]==='build9rent9'?' selected':''}>Build 9 → Rent 9</option></select></div>`;}).join('');
     $('#player-count').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.count)===count)));
-    $('#setup-map-note').textContent=`${G.MAP_SETS[count].length} islands · each action group appears ${count===2?'twice':count===3?'2–3 times':'3–4 times'} · ships start evenly spaced`;
+    $('#setup-map-note').textContent=`${G.MAP_SETS[count].length} islands · each T face appears ${count+1} times · ships start evenly spaced`;
   }
   function openSetup() { clearBot();$('#setup-close').hidden=!started;$('#resume-game').hidden=!saved;renderOpponents();$('#setup-dialog').showModal(); }
   $('#setup-form').addEventListener('submit',e=>{
@@ -1040,7 +1043,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   $('#board').addEventListener('mouseover',e=>boardPreview(e,false));$('#board').addEventListener('mouseout',e=>boardPreview(e,true));
   $('#board').addEventListener('focusin',e=>boardPreview(e,false));$('#board').addEventListener('focusout',e=>boardPreview(e,true));
   $('#market').addEventListener('click',e=>{const b=e.target.closest('[data-card]');if(b&&!b.disabled)act({type:'card',index:Number(b.dataset.card)});});
-  $('#magic').addEventListener('click',e=>{const b=e.target.closest('[data-spell]');if(b&&!b.disabled)act({type:'spell',spell:b.dataset.spell});});
+  $('#magic').addEventListener('click',e=>{const b=e.target.closest('[data-spell]');if(b&&!b.disabled)act({type:'spell',spell:b.dataset.spell,souvenirs:souvenirChoice(b.dataset.souvenirs)});});
   $('#turn-controls').addEventListener('click',e=>{
     const b=e.target.closest('button');if(!b||b.disabled)return;
     if(b.hasAttribute('data-new-match'))return openSetup();
@@ -1049,8 +1052,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     if(b.hasAttribute('data-build-card'))return act({type:'build',index:Number(b.dataset.buildCard)});
     if(b.hasAttribute('data-basic'))return act({type:'basic',symbol:b.dataset.basic});
     if(b.hasAttribute('data-explore'))return act({type:'explore'});
-    if(b.hasAttribute('data-tile'))return act({type:'tile',index:Number(b.dataset.tile)});
+    if(b.hasAttribute('data-tile'))return act({type:'tile',index:Number(b.dataset.tile),souvenirs:souvenirChoice()});
     if(b.hasAttribute('data-skip-explore'))return act({type:'skip-explore'});
+    if(b.hasAttribute('data-rent-build'))return act({type:'rent-build'});
     if(b.hasAttribute('data-convert'))return act({type:'convert'});
     if(b.hasAttribute('data-pass'))return act({type:'pass'});
     if(b.hasAttribute('data-sow'))return act({type:'sow',amount:Number($('#sow-number').value)});
@@ -1065,9 +1069,9 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   });
   function exportChoicesCsv() {
     if (!started || !state.done) return;
-    const types = { explore:'Explore island',tile:'Activate exploration tile','skip-explore':'Skip optional activation', move: 'Move', build: 'Build', 'build-card': 'Build die', basic: 'Basic rent', card: 'Travel die', convert: 'Convert seeds', spell: 'Fruit magic', plant: 'Plant seeds', pass: 'Pass', 'end-turn': 'End turn' };
-    const stages = { explore:'Main action',tile:'Exploration activation','skip-explore':'Exploration activation', move: 'Move', build: 'Main action', 'build-card': 'Main action', basic: 'Main action', card: 'Main action', convert: 'Main action', spell: 'Free action', plant: 'Free action', pass: 'Main action', 'end-turn': 'End turn' };
-    const headers = ['sequence', 'global_turn', 'player_turn', 'choice_in_turn', 'player', 'captain_type', 'stage', 'choice', 'island_position', 'island_id', 'option', 'die_id', 'steps', 'amount', 'cost', 'cost_resource', 'detail'];
+    const types = {'rent-build':'Build after rent', explore:'Explore island',tile:'Activate exploration tile','skip-explore':'Skip optional activation', move: 'Move', build: 'Build', 'build-card': 'Build die', basic: 'Basic rent', card: 'Travel die', convert: 'Convert seeds', spell: 'Fruit magic', plant: 'Plant seeds', pass: 'Pass', 'end-turn': 'End turn' };
+    const stages = {'rent-build':'Optional build', explore:'Main action',tile:'Exploration activation','skip-explore':'Exploration activation', move: 'Move', build: 'Main action', 'build-card': 'Main action', basic: 'Main action', card: 'Main action', convert: 'Main action', spell: 'Free action', plant: 'Free action', pass: 'Main action', 'end-turn': 'End turn' };
+    const headers = ['sequence', 'global_turn', 'player_turn', 'choice_in_turn', 'player', 'captain_type', 'stage', 'choice', 'island_position', 'island_id', 'option', 'die_id', 'steps', 'amount', 'cost', 'cost_resource', 'trade_payment', 'detail'];
     const ownTurns = state.players.map(() => 0), positions = state.players.map((_, i) => Math.floor(((i - state.firstPlayer + state.players.length) % state.players.length) * state.islands.length / state.players.length));
     let globalTurn = 0, choiceInTurn = 0, sequence = 0;
     const rows = [];
@@ -1078,7 +1082,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
       const player = state.players[event.player], position = positions[event.player];
       const option = event.type === 'spell' ? event.spell : event.type === 'basic' ? event.symbol : event.type === 'explore' || event.type === 'tile' ? event.tile : event.type === 'card' || event.type === 'build-card' ? 'T' + event.cardType : '';
       const costResource = event.type==='tile'?Object.keys(event.payment||{}).join('+'):event.type === 'move' || event.type === 'card' || event.type==='explore' ? 'oil' : event.type === 'build' || event.type === 'convert' ? 'warehouse seeds' : event.type === 'spell' ? 'fruit' : '';
-      rows.push([++sequence, globalTurn, ownTurns[event.player], ++choiceInTurn, player.name, player.type, stages[event.type], types[event.type], position + 1, state.islands[position].id, option, event.cardId || '', event.steps ?? '', event.points ?? event.amount ?? '', event.cost ?? (event.payment?Object.values(event.payment).join('+'):event.type === 'convert' ? 4 : ''), costResource, event.message]);
+      rows.push([++sequence, globalTurn, ownTurns[event.player], ++choiceInTurn, player.name, player.type, stages[event.type], types[event.type], position + 1, state.islands[position].id, option, event.cardId || '', event.steps ?? '', event.points ?? event.amount ?? '', event.cost ?? (event.payment?Object.values(event.payment).join('+'):event.type === 'convert' ? 4 : ''), costResource, JSON.stringify(event.payment||{}), event.message]);
     }
     const cell = value => {
       let string = String(value ?? '');
@@ -1093,7 +1097,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
   $('#export-game').addEventListener('click',()=>{
     if(!started)return;
     const exportedState=G.clone(state);for(const key of ['round','totalRounds','triggerRound'])delete exportedState[key];
-    const output={format:'island-circuit-match-v26',version:26,exportedAt:new Date().toISOString(),state:exportedState};
+    const output={format:'island-circuit-match-v27',version:27,exportedAt:new Date().toISOString(),state:exportedState};
     const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='island-circuit-match-'+state.seed.replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   // A small read-only handle makes the current playtest inspectable without exposing UI shortcuts.
@@ -1102,6 +1106,7 @@ body:has(#setup-dialog[open]) .game-shell{visibility:hidden}
     started=true;render();queueBot();
   }else{render();openSetup();}
 })();
+
 
 </script>
 <script type="text/plain" id="font-license">Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
